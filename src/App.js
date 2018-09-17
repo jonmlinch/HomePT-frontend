@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowerRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import './App.css';
@@ -30,9 +30,9 @@ class App extends Component {
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` }
       }).then(response => {
-        console.log('SUCCESS', respnse);
+        console.log('SUCCESS', response);
         this.setState({
-          user: respnse.data.user
+          user: response.data.user
         });
       }).catch( err => {
         console.log('ERROR', err);
