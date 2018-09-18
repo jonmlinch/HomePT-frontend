@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import cookie from 'react-cookie';
 import SERVER_URL from '../constants/server';
+import { setCookie } from '../helpers/helpers'
 
 class Login extends Component {
   constructor(props){
       super(props);
       this.state = {
           email: '',
-          password: ''
+          password: '',
+          type: ''
       };
   };
 
@@ -30,13 +33,24 @@ class Login extends Component {
       axios.post(SERVER_URL + '/auth/login', this.state)
       .then(result => {
           //Add the newly received token to local storage ***This will likely change when using cookies ****
-          localStorage.setItem('mernToken', result.data.token);
+          setCookie('mernToken', result.data.token);
           //Update the user with a call to App.js
           this.props.updateUser();
       }).catch( err => {
           console.log('ERROR', err.response.data);
       });
   };
+
+  handleType = (e) => {
+      e.preventDefault();
+      console.log(this.state);
+      axios.get(SERVER_URL + '/user')
+      .then( result => {
+          console.log('THE RESLUT IS: ', result)
+      }).catch( err => {
+          console.log(err)
+      })
+  }
   
   render() {
     if(this.props.user){
@@ -52,7 +66,7 @@ class Login extends Component {
             <div>
                 <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
             </div>
-            <input type="submit" value="Login" className="button" />
+            <input type="submit" value="Login" className="button" onClick={this.handleType} />
           </form>
       </div>
     );

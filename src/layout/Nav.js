@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import cookie from 'react-cookie';
+import { deleteCookie } from '../helpers/helpers'
 
 class Nav extends Component {
   handleLogout = (e) => {
       console.log('logging out');
       e.preventDefault();
-      localStorage.removeItem('mernToken');
+      deleteCookie('mernToken');
       this.props.updateUser();
   }
   
