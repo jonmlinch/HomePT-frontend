@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button, Card, Row, Col, Navbar, NavItem } from 'react-materialize';
-
-
+import { deleteCookie } from '../helpers/helpers'
 
 class Nav extends Component {
   handleLogout = (e) => {
       console.log('logging out');
       e.preventDefault();
-      localStorage.removeItem('mernToken');
+      deleteCookie('mernToken');
       this.props.updateUser();
   }
   
@@ -43,9 +42,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
-
-{/*<Navbar brand='logo' right>
-  <NavItem onClick={() => console.log('test click')}>Getting started</NavItem>
-  <NavItem href='components.html'>Components</NavItem>
-</Navbar>*/}

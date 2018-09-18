@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
+import cookie from 'react-cookie';
 import SERVER_URL from './constants/server';
 import './App.css';
 import Home from './Home';
@@ -8,7 +9,12 @@ import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
+<<<<<<< HEAD
 import { Button, Card, Row, Col, Navbar, NavItem } from 'react-materialize';
+=======
+import { Button, Card, Row, Col } from 'react-materialize';
+import { deleteCookie, getCookie } from './helpers/helpers'
+>>>>>>> f964162ca3f32b221c6a33e27db93ab43b2614c5
 
 class App extends Component {
   constructor(props){
@@ -24,7 +30,7 @@ class App extends Component {
   }
 
   getUser = () => {
-    var token = localStorage.getItem('mernToken');
+    var token = getCookie('mernToken');
     if(token){
       console.log('token found in local storage', token);
       //There is a token in localStorage ****This Needs to change to cookies ****
@@ -39,14 +45,14 @@ class App extends Component {
       }).catch( err => {
         console.log('ERROR', err);
         console.log('response', err.response);
-        localStorage.removeItem('mernToken'); //This will need to change when using Cookies
+        deleteCookie('mernToken'); //This will need to change when using Cookies
         this.setState({
           user: null
         });
       });
     } else {
       console.log('No token was found');
-      localStorage.removeItem('mernToken');
+      deleteCookie('mernToken');
       this.setState({
         user: null
       });

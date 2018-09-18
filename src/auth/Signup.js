@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import cookie from 'react-cookie';
 import SERVER_URL from '../constants/server';
+import { setCookie } from '../helpers/helpers'
 
 class Signup extends Component {
   constructor(props){
@@ -38,7 +40,7 @@ class Signup extends Component {
       axios.post(SERVER_URL + '/auth/signup', this.state)
       .then(result => {
           //Add the newly received token to local storage ***This will likely change when using cookies ****
-          localStorage.setItem('mernToken', result.data.token);
+          setCookie('mernToken', result.data.token);
           //Update the user with a call to App.js
           this.props.updateUser();
       }).catch( err => {
