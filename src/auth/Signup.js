@@ -10,19 +10,13 @@ class Signup extends Component {
           name: '',
           email: '',
           password: '',
-          pt_id: ''
+          type: 'client'
       };
   };
 
   handleNameChange = (e) => {
       this.setState({
           name: e.target.value
-      })
-  }
-
-  handlePtId = (e) => {
-      this.setState({
-          pt_id: e.target.value
       })
   }
 
@@ -41,7 +35,7 @@ class Signup extends Component {
   handleSubmit = (e) => {
       e.preventDefault();
       console.log(this.state);
-      axios.post(SERVER_URL + '/auth/login', this.state)
+      axios.post(SERVER_URL + '/auth/signup', this.state)
       .then(result => {
           //Add the newly received token to local storage ***This will likely change when using cookies ****
           localStorage.setItem('mernToken', result.data.token);
@@ -53,9 +47,9 @@ class Signup extends Component {
   };
   
   render() {
-    // if(this.props.user){
-    //     return(<Redirect to="/profile" />);
-    // }
+    if(this.props.user){
+        return(<Redirect to="/profile" />);
+    }
     return (
       <div>
           <h2>Sign Up</h2>
@@ -68,9 +62,6 @@ class Signup extends Component {
             </div>
             <div>
                 <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-            </div>
-            <div>
-                <input name="pt_id" placeholder="pt_id" value={this.state.pt_id} onChange={this.handlePtId} />
             </div>
             <input type="submit" value="Register" className="button" />
           </form>

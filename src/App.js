@@ -30,7 +30,8 @@ class App extends Component {
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` }
       }).then(response => {
-        console.log('SUCCESS', response);
+        console.log('THE RESPONSE IS: ', response);
+        console.log('API says: ', response.data )
         this.setState({
           user: response.data.user
         });

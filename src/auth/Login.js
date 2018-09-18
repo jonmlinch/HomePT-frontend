@@ -39,9 +39,9 @@ class Login extends Component {
   };
   
   render() {
-    //if(this.props.user){
-        //return(<Redirect to="/profile" />);
-    //}
+    if(this.props.user){
+        return(<Redirect to="/profile" />);
+    }
     return (
       <div>
           <h2>Login</h2>
@@ -52,6 +52,7 @@ class Login extends Component {
             <div>
                 <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
             </div>
+            <input type="submit" value="Login" className="button" />
           </form>
       </div>
     );
