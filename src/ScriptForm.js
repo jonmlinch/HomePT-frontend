@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
+import { Button, Card, Row, Col, Input } from 'react-materialize';
 
 class Signup extends Component {
   constructor(props){
@@ -64,9 +65,9 @@ class Signup extends Component {
         )   
     } else {
         return (
-            <div>
+            <div className="container">
                 <h2>Create a new Workout</h2>
-                <form onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit}>
                     <div>
                         <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                     </div>
@@ -79,8 +80,9 @@ class Signup extends Component {
                     </select>
                     <label>Materialize Multiple Select</label>
                     </div>
-                    <input type="submit" value="Register" className="button" />
-                </form>
+                    <div>
+                        <Button type="submit" value="Register" waves='light'>Submit</Button>
+                    </div>                </form>
             </div>
         )
     }

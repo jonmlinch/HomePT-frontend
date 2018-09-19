@@ -65,7 +65,7 @@ class Signup extends Component {
         return (
             <div className="container">
                 <h2 center-text>Create a new patient</h2>
-                <form onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit}>
                     <div>
                         <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                     </div>
@@ -75,7 +75,9 @@ class Signup extends Component {
                     <div>
                         <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
                     </div>
-                    <input type="submit" value="Register" className="button" />
+                    <div>
+                        <Button type="submit" value="Register" waves='light'>Submit</Button>
+                    </div>
                 </form>
             </div>
         )
