@@ -32,7 +32,7 @@ class Nav extends Component {
     }
     return (
       <div>
-        <Navbar brand='logo' right>
+        <Navbar className="navbar" brand='HomePT' right>
             <li><Link to="/">Home</Link></li>
             <li>{links}</li>
         </Navbar>

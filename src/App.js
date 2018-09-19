@@ -7,14 +7,11 @@ import './App.css';
 import Home from './Home';
 import Login from './auth/Login';
 import Nav from './layout/Nav';
+import Foot from './layout/Foot';
 import Profile from './Profile';
 import Signup from './auth/Signup';
-<<<<<<< HEAD
-import { Button, Card, Row, Col, Navbar, NavItem } from 'react-materialize';
-=======
-import { Button, Card, Row, Col } from 'react-materialize';
-import { deleteCookie, getCookie } from './helpers/helpers'
->>>>>>> f964162ca3f32b221c6a33e27db93ab43b2614c5
+import { Button, Card, Row, Col, Footer } from 'react-materialize';
+import { deleteCookie, getCookie } from './helpers/helpers';
 
 class App extends Component {
   constructor(props){
@@ -75,6 +72,7 @@ class App extends Component {
           <Route path="/profile" component={
             () => (<Profile user={this.state.user} updateUser={this.getUser} />)
           } />
+          <Foot />
           </div>
         </Router>
       </div>
