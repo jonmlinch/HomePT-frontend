@@ -14,18 +14,28 @@ class Nav extends Component {
   render() {
     let links = '';
     if(this.props.user){
-        links = (
-            <span>
-                <NavItem href='#' onClick={this.handleLogout}>Logout</NavItem>
-                <NavItem><Link to="/profile">Profile</Link></NavItem>
-            </span>
-        );
+        if(this.props.user.type === 'client'){
+            links = (
+                <span>
+                    <li><Link to="/profile">Profile</Link></li>
+                    <NavItem href='#' onClick={this.handleLogout}>Logout</NavItem>
+                </span>
+            );   
+        } else {
+            links = (
+                <span>
+                    <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/signup">Add New Client</Link></li>
+                    <NavItem href='#' onClick={this.handleLogout}>Logout</NavItem>
+                </span>
+            );
+        }
+        
     } else {
         links = (
           <div>
             <span>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/signup">Register</Link></li>
+                <li><Link to="/login">Login</Link></li> 
             </span>
           </div>
         );
