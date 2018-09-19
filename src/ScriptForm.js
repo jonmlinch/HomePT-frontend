@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import SERVER_URL from '../constants/server';
-
+import SERVER_URL from './constants/server';
 
 class Signup extends Component {
   constructor(props){
       super(props);
       this.state = {
-          name: '',
-          email: '',
-          password: '',
-          type: 'client',
           redirect: false,
-          //provider: this.props.user.id
       };
   };
 
@@ -43,10 +37,8 @@ class Signup extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      const toSubmit = this.state
-      toSubmit.provider = this.props.user.id
       console.log(this.state);
-      axios.post(SERVER_URL + '/auth/signup', toSubmit)
+      axios.post(SERVER_URL + '/auth/signup', this.state)
       .then(result => {
           this.setRedirect();
       }).catch( err => {
@@ -64,6 +56,12 @@ class Signup extends Component {
             <div>
                 <h2>Create a new patient</h2>
                 <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <label>Patient:</label>
+                        <select>
+                            
+                        </select>
+                    </div>
                     <div>
                         <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                     </div>

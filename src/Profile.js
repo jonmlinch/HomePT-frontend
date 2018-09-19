@@ -15,7 +15,6 @@ class Profile extends Component {
         }
     }
 
-
   render() {
     if(this.props.user){
         if(this.props.user.type === 'client'){

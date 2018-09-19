@@ -25,6 +25,7 @@ class Nav extends Component {
             links = (
                 <span>
                     <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/prescribe">New Workout</Link></li>
                     <li><Link to="/signup">Add New Client</Link></li>
                     <NavItem href='#' onClick={this.handleLogout}>Logout</NavItem>
                 </span>
