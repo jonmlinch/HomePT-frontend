@@ -6,4 +6,7 @@
 
 .foot {
   background-color: #4ea2de;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }

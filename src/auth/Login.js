@@ -30,6 +30,7 @@ class Login extends Component {
       console.log(this.state);
       axios.post(SERVER_URL + '/auth/login', this.state)
       .then(result => {
+          console.log('THIS BITCH IS:', result);
           //Add the newly received token to cookie
           setCookie('mernToken', result.data.token);
           //Update the user with a call to App.js
@@ -44,7 +45,8 @@ class Login extends Component {
         return(<Redirect to="/profile" />);
     }
     return (
-      <div>
+      <div className="container">
+        <main>
           <h2>Login</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
@@ -55,6 +57,7 @@ class Login extends Component {
             </div>
             <input type="submit" value="Login" className="button"  />
           </form>
+        </main>
       </div>
     );
   }
