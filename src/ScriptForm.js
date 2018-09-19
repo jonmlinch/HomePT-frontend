@@ -11,6 +11,17 @@ class Signup extends Component {
       };
   };
 
+  //handleOnChange= {this.handleOnChange.bind(this)}
+
+  handleNames = (e) => {
+      e.preventDefault();
+      console.log('Getting those clients')
+      axios.get(SERVER_URL + '/controllers/clients')
+      .then( result => {
+          console.log(result.data.name)
+      })
+  }
+
   setRedirect = () => {
     this.setState({
         redirect: true
@@ -54,22 +65,19 @@ class Signup extends Component {
     } else {
         return (
             <div>
-                <h2>Create a new patient</h2>
+                <h2>Create a new Workout</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>Patient:</label>
-                        <select>
-                            
-                        </select>
-                    </div>
                     <div>
                         <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                     </div>
                     <div>
-                        <input name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
-                    </div>
-                    <div>
-                        <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                    <select>
+                        <option>Choose your option</option>
+                        <option >Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                    <label>Materialize Multiple Select</label>
                     </div>
                     <input type="submit" value="Register" className="button" />
                 </form>
