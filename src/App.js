@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
-import cookie from 'react-cookie';
 import SERVER_URL from './constants/server';
 import './App.css';
 import Home from './Home';
@@ -66,9 +65,7 @@ class App extends Component {
           <Route path="/login" component={
             () => (<Login user={this.state.user} updateUser={this.getUser} />)
           } />
-          <Route path="/signup" component={
-            () => (<Signup user={this.state.user} updateUser={this.getUser} />)
-          } />
+          <Route path="/signup" component={() => (<Signup user={this.state.user} />)} />
           <Route path="/profile" component={
             () => (<Profile user={this.state.user} updateUser={this.getUser} />)
           } />

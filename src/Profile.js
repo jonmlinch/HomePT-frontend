@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
+import { Link, NavLink, Redirect } from 'react-router-dom';
+import axios from 'axios';
+import SERVER_URL from './constants/server';
+import Patient from './accounts/Patient';
+import Therapist from './accounts/Therapist';
+
 
 
 class Profile extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            type: ''
+        }
+    }
+
+
   render() {
     if(this.props.user){
-        console.log(this.props.user.type)
         if(this.props.user.type === 'client'){
             return (
-                <div>
-                    <h2>This will be the CLIENT profile page</h2>
-                </div>
+                <Patient />
             )
         } else {
             return (
-                <div>
-                    <h2>This will the PROVIDER profile page</h2>
-                </div>
+                <Therapist />
             )
         }
         
     }
     return (
-      <div>
-          <h2>Please login to see your profile!</h2>
-      </div>
+      <Redirect to="/login" />
     );
   }
 }

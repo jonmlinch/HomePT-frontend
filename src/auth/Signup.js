@@ -12,9 +12,17 @@ class Signup extends Component {
           name: '',
           email: '',
           password: '',
-          type: 'client'
+          type: 'client',
+          redirect: false,
+          provider: this.props.user.id
       };
   };
+
+  setRedirect = () => {
+    this.setState({
+        redirect: true
+    })
+  }
 
   handleNameChange = (e) => {
       this.setState({
@@ -39,36 +47,36 @@ class Signup extends Component {
       console.log(this.state);
       axios.post(SERVER_URL + '/auth/signup', this.state)
       .then(result => {
-          //Add the newly received token to local storage ***This will likely change when using cookies ****
-          setCookie('mernToken', result.data.token);
-          //Update the user with a call to App.js
-          this.props.updateUser();
+          this.setRedirect();
       }).catch( err => {
-          console.log('ERROR', err.response.data);
+          console.log('ERROR', err.response);
       });
   };
   
   render() {
-    if(this.props.user){
-        return(<Redirect to="/profile" />);
+    if(this.state.redirect){
+        return (
+            <Redirect to="/profile" />
+        )   
+    } else {
+        return (
+            <div>
+                <h2>Create a new patient</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
+                    </div>
+                    <div>
+                        <input name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
+                    </div>
+                    <div>
+                        <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                    </div>
+                    <input type="submit" value="Register" className="button" />
+                </form>
+            </div>
+        )
     }
-    return (
-      <div>
-          <h2>Sign Up</h2>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-                <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
-            </div>
-            <div>
-                <input name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
-            </div>
-            <div>
-                <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-            </div>
-            <input type="submit" value="Register" className="button" />
-          </form>
-      </div>
-    );
   }
 }
 
