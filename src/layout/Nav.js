@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Redirect } from 'react-router-dom';
 import { Button, Card, Row, Col, Navbar, NavItem } from 'react-materialize';
 import { deleteCookie } from '../helpers/helpers'
 
