@@ -54,7 +54,7 @@ class App extends Component {
       deleteCookie('mernToken');
       this.setState({
         user: null,
-        checkLogin: false
+        checkLogin: true
       });
     }
   }
@@ -74,7 +74,7 @@ class App extends Component {
               <Route path="/profile" component={
                 () => (<Profile user={this.state.user} updateUser={this.getUser} />)
               } />
-              <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} updateUser={this.getUser} />)} />
+              <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser} />)} />
             </main>
             <Foot />
           </div>
