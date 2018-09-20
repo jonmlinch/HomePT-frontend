@@ -4,7 +4,6 @@ import axios from 'axios';
 import SERVER_URL from './constants/server';
 import { Button, Card, Row, Col, Input } from 'react-materialize';
 
-
 class Signup extends Component {
   constructor(props){
       super(props);
@@ -69,11 +68,11 @@ class Signup extends Component {
             )   
         } else {
             return (
-                <div>
+                <div className="container script-form-container z-depth-1 center">
                     <h2>Create a new Workout</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div>
-                            <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
+                            <Input name="name" label="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                         </div>
                         <div>
                         <Row>

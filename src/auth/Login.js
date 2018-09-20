@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
 import { setCookie } from '../helpers/helpers'
+import { Button, Card, Row, Col, Input } from 'react-materialize';
+
 
 class Login extends Component {
   constructor(props){
@@ -30,6 +32,7 @@ class Login extends Component {
       console.log(this.state);
       axios.post(SERVER_URL + '/auth/login', this.state)
       .then(result => {
+          console.log('THIS BITCH IS:', result);
           //Add the newly received token to cookie
           setCookie('mernToken', result.data.token);
           //Update the user with a call to App.js
@@ -44,17 +47,21 @@ class Login extends Component {
         return(<Redirect to="/profile" />);
     }
     return (
-      <div>
+      <div className="container login-form-container center z-depth-2 login">
+        <main>
           <h2>Login</h2>
-          <form onSubmit={this.handleSubmit}>
+          <form className='form' onSubmit={this.handleSubmit}>
             <div>
-                <input name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
+                <Input name="email" label="E-Mail" value={this.state.email} onChange={this.handleEmailChange} />
             </div>
             <div>
-                <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                <Input name="password" label="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
             </div>
-            <input type="submit" value="Login" className="button"  />
+            <div>
+                <Button className="blue darken-1" type="submit" value="Login" waves='light'>Submit</Button>
+            </div>
           </form>
+        </main>
       </div>
     );
   }
