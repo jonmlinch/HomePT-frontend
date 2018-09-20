@@ -27,3 +27,10 @@
   padding: 50px;
   width: 50%;
 }
+
+.signup-form-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  width: 40%; 
+}
