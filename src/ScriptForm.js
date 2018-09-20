@@ -20,6 +20,11 @@ class ScriptForm extends Component {
       this.handleNames();
   }
 
+  handleLogout = () => {
+      console.log('this is the logout function talking here')
+      setTimeout(function() {return (<Redirect to="/" />)}.bind(this), 1000);
+  }
+
   handleNames = (e) => {
       //e.preventDefault();
       console.log('Getting those clients for provider', this.props.user)
@@ -66,10 +71,9 @@ class ScriptForm extends Component {
   }
   
   render() {
-
     if(this.props.checkedLogin && this.props.user) {
         return (
-            <div className="container script-form-container z-depth-1 center">
+            <div>
                 <h2>Create a new Workout</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -77,28 +81,27 @@ class ScriptForm extends Component {
                     </div>
                     <div>
                     <Row>
-                    <Input name="name" label="Full Name" value={this.state.name} />
+                    <Input s={12} type='select' label="Patient Name:" defaultValue='2' onChange={this.handleNames}>
                         {this.state.clients.map(client => <option value={client.name}>{client.name}</option>)}
                     </Input>
                     </Row>
                     </div>
-                    <div>
-                        <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
-                    </div>
+                    <input type="submit" value="Register" className="button" />
                 </form>
             </div>
         ) 
     } else if(this.props.checkedLogin) {
-
         return (
             <Redirect to="/" />
         )
     } else {
         return (
-            <p>Loading ...</p>
+            <div>
+                <p>Loading ...</p>
+            </div>
+            
         )  
     }
-    
   }
 }
 
