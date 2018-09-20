@@ -4,7 +4,8 @@ import axios from 'axios';
 import SERVER_URL from './constants/server';
 import { Button, Card, Row, Col, Input } from 'react-materialize';
 
-class Signup extends Component {
+
+class ScriptForm extends Component {
   constructor(props){
       super(props);
       this.state = {
@@ -13,20 +14,29 @@ class Signup extends Component {
       };
   };
 
+  componentDidMount() {
+      console.log("On CDM of SignUp, user is:", this.props.user);
+      console.log("This is the checkLogin value: ", this.props.checkedLogin)
+      this.handleNames();
+  }
+
   handleNames = (e) => {
       //e.preventDefault();
       console.log('Getting those clients for provider', this.props.user)
       const newClient = this.state.clients;
-      axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
-      .then( result => {
-          console.log(result.data.clients)
-            this.setState({
-                clients: result.data.clients
-            })
-            console.log(this.state.clients)
-      }).catch(err => {
-          console.log('THERE IS AN ERROR', err)
-      })
+      if(this.props.user){
+        axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
+        .then( result => {
+            console.log(result.data.clients)
+                this.setState({
+                    clients: result.data.clients
+                })
+                console.log(this.state.clients)
+        }).catch(err => {
+            console.log('THERE IS AN ERROR', err)
+        })
+      }
+      
   }
 
   setRedirect = () => {
@@ -56,44 +66,40 @@ class Signup extends Component {
   }
   
   render() {
-    if(this.props.user){
-        if(this.state.redirect){
-            return (
-                <Redirect to="/profile" />
-            )   
-        } else {
-            return (
-                <div className="container script-form-container z-depth-1 center">
-                    <h2>Create a new workout</h2>
-                    <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <Input name="name" label="Full Name" value={this.state.name} onChange={this.handleNameChange} />
-                        </div>
-                        <div>
-                        <Row>
-                        <Input s={12} type='select' label="Materialize Select" defaultValue='1' onChange={this.handleNames}>
-                            <option value='1'>Option 1</option>
-                            <option value='2'>Option 2</option>
-                            <option value='3'>Option 3</option>
-                            {this.state.clients.map(client => <option value={client.name}>{client.name}</option>)}
-                        </Input>
-                        </Row>
-                        </div>
-                        <div>
-                            <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
-                        </div>
-                    </form>
-                </div>
-            )
-        }
-    }
-    else {
+
+    if(this.props.checkedLogin && this.props.user) {
         return (
-            <Redirect to="/login" />
-          );
+            <div className="container script-form-container z-depth-1 center">
+                <h2>Create a new Workout</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
+                    </div>
+                    <div>
+                    <Row>
+                    <Input name="name" label="Full Name" value={this.state.name} />
+                        {this.state.clients.map(client => <option value={client.name}>{client.name}</option>)}
+                    </Input>
+                    </Row>
+                    </div>
+                    <div>
+                        <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
+                    </div>
+                </form>
+            </div>
+        ) 
+    } else if(this.props.checkedLogin) {
+
+        return (
+            <Redirect to="/" />
+        )
+    } else {
+        return (
+            <p>Loading ...</p>
+        )  
     }
-}
     
+  }
 }
 
-export default Signup;
+export default ScriptForm;
