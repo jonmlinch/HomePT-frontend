@@ -13,11 +13,6 @@ class Signup extends Component {
       };
   };
 
-  componentDidMount() {
-      console.log("On CDM of SignUp, user is:", this.props.user);
-      console.log("The user state is: ", this.props.user.id)
-  }
-
   handleNames = (e) => {
       //e.preventDefault();
       console.log('Getting those clients for provider', this.props.user)
@@ -76,7 +71,7 @@ class Signup extends Component {
                         </div>
                         <div>
                         <Row>
-                        <Input s={12} type='select' label="Materialize Select" defaultValue='2' onChange={this.handleNames}>
+                        <Input s={12} type='select' label="Materialize Select" defaultValue='1' onChange={this.handleNames}>
                             <option value='1'>Option 1</option>
                             <option value='2'>Option 2</option>
                             <option value='3'>Option 3</option>
@@ -84,7 +79,9 @@ class Signup extends Component {
                         </Input>
                         </Row>
                         </div>
-                        <input type="submit" value="Register" className="button" />
+                        <div>
+                            <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
+                        </div>
                     </form>
                 </div>
             )
