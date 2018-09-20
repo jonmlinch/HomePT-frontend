@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props){
     super(props);
       this.state = {
-        user: null
+        user: null,
       }
     }
 
@@ -30,7 +30,6 @@ class App extends Component {
     var token = getCookie('mernToken');
     if(token){
       console.log('token found in local storage', token);
-      //There is a token in localStorage ****This Needs to change to cookies ****
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` }
       }).then(response => {
@@ -42,7 +41,7 @@ class App extends Component {
       }).catch( err => {
         console.log('ERROR', err);
         console.log('response', err.response);
-        deleteCookie('mernToken'); //This will need to change when using Cookies
+        deleteCookie('mernToken'); 
         this.setState({
           user: null
         });
@@ -55,6 +54,21 @@ class App extends Component {
       });
     }
   }
+
+  handleNames = () => {
+    console.log('Getting those clients for provider', this.props.user)
+    const newClient = this.state.clients;
+    axios.get(SERVER_URL + '/users/clients/' + this.state.user.id)
+    .then( result => {
+        console.log(result.data.clients)
+          this.setState({
+              clients: result.data.clients
+          })
+          console.log(this.state.clients)
+    }).catch(err => {
+        console.log('THERE IS AN ERROR', err)
+    })
+}
 
   render() {
     return (
@@ -70,7 +84,7 @@ class App extends Component {
           <Route path="/profile" component={
             () => (<Profile user={this.state.user} updateUser={this.getUser} />)
           } />
-          <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} />)} />
+          <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} updateUser={this.getUser} />)} />
           <Foot />
           </div>
         </Router>
