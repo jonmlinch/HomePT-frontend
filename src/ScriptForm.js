@@ -69,7 +69,7 @@ class Signup extends Component {
                 <h2>Create a new Workout</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <div>
-                        <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
+                        <Input name="name" label="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                     </div>
                     <div>
                     <select>

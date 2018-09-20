@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Parallax } from 'react-materialize';
-
 import parallax1 from './woman-running.jpg';
 
 class Home extends Component {

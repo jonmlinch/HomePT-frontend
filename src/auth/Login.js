@@ -52,10 +52,10 @@ class Login extends Component {
           <h2>Login</h2>
           <form className='form' onSubmit={this.handleSubmit}>
             <div>
-                <input name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
+                <Input name="email" label="E-Mail" value={this.state.email} onChange={this.handleEmailChange} />
             </div>
             <div>
-                <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                <Input name="password" label="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
             </div>
             <div>
                 <Button className="blue darken-1" type="submit" value="Login" waves='light'>Submit</Button>
