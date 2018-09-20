@@ -18,6 +18,7 @@ class App extends Component {
     super(props);
       this.state = {
         user: null,
+        checkLogin: false
       }
     }
 
@@ -36,39 +37,27 @@ class App extends Component {
         console.log('THE RESPONSE IS: ', response);
         console.log('API says: ', response.data )
         this.setState({
-          user: response.data.user
+          user: response.data.user,
+          checkLogin: true
         });
       }).catch( err => {
         console.log('ERROR', err);
         console.log('response', err.response);
         deleteCookie('mernToken'); 
         this.setState({
-          user: null
+          user: null,
+          checkLogin: true
         });
       });
     } else {
       console.log('No token was found');
       deleteCookie('mernToken');
       this.setState({
-        user: null
+        user: null,
+        checkLogin: false
       });
     }
   }
-
-  handleNames = () => {
-    console.log('Getting those clients for provider', this.props.user)
-    const newClient = this.state.clients;
-    axios.get(SERVER_URL + '/users/clients/' + this.state.user.id)
-    .then( result => {
-        console.log(result.data.clients)
-          this.setState({
-              clients: result.data.clients
-          })
-          console.log(this.state.clients)
-    }).catch(err => {
-        console.log('THERE IS AN ERROR', err)
-    })
-}
 
   render() {
     return (
@@ -84,7 +73,7 @@ class App extends Component {
           <Route path="/profile" component={
             () => (<Profile user={this.state.user} updateUser={this.getUser} />)
           } />
-          <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} updateUser={this.getUser} />)} />
+          <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser}/>)} />
           <Foot />
           </div>
         </Router>
