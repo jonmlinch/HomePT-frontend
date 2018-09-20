@@ -72,7 +72,16 @@ class ScriptForm extends Component {
                 <h2>Create a new workout</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                      <Input name="name" label="Full Name" value={this.state.name} />
+                    <Row>
+                      <Input s={4} type='select' label="Materialize Select" defaultValue='1'>
+                        <option value='1'>Option 1</option>
+                        <option value='2'>Option 2</option>
+                        <option value='3'>Option 3</option>
+                      </Input>
+                      <Input s={4} label="Reps" />
+                      <Input s={4} label="Frequency" />
+                    </Row>
+                      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
                     </div>
                     <div>
                       <Row>
