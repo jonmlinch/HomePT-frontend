@@ -47,7 +47,7 @@ class Login extends Component {
         return(<Redirect to="/profile" />);
     }
     return (
-      <div className="container">
+      <div className="container form-container center z-depth-2 login">
         <main>
           <h2>Login</h2>
           <form className='form' onSubmit={this.handleSubmit}>
@@ -58,7 +58,7 @@ class Login extends Component {
                 <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
             </div>
             <div>
-                <Button type="submit" value="Login" waves='light'>Submit</Button>
+                <Button className="blue darken-1" type="submit" value="Login" waves='light'>Submit</Button>
             </div>
           </form>
         </main>

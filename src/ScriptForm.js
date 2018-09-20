@@ -65,7 +65,7 @@ class Signup extends Component {
         )   
     } else {
         return (
-            <div className="container">
+            <div className="container form-container z-depth-1 center">
                 <h2>Create a new Workout</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <div>
