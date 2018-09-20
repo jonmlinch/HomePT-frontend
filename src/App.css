@@ -34,3 +34,13 @@
   padding: 50px;
   width: 40%; 
 }
+
+.parallax-class {
+  height: 350px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.home-padding {
+  margin-top: 50px;
+}
