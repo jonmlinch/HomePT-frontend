@@ -69,19 +69,21 @@ class ScriptForm extends Component {
     if(this.props.checkedLogin && this.props.user) {
         return (
             <div className="container script-form-container z-depth-1 center">
-                <h2>Create a new Workout</h2>
+                <h2>Create a new workout</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
+                      <Input name="name" label="Full Name" value={this.state.name} />
                     </div>
                     <div>
-                    <Row>
-                    <Input name="name" type='select' label="Patient Name:"  >
-                        {this.state.clients.map(client => <option value={client.name}>{client.name}</option>)}
-                    </Input>
-                    </Row>
+                      <Row>
+                        <Input name="name" type='select' label="Patient Name:"  >
+                          {this.state.clients.map(client => <option value={client.name}>{client.name}</option>)}
+                        </Input>
+                      </Row>
                     </div>
-                    <input type="submit" value="Register" className="button" />
+                    <div>
+                        <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
+                    </div>
                 </form>
             </div>
         ) 
