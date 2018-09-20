@@ -86,6 +86,7 @@ class ScriptForm extends Component {
             </div>
         ) 
     } else if(this.props.checkedLogin) {
+
         return (
             <Redirect to="/" />
         )

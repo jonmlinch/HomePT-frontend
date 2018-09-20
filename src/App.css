@@ -6,4 +6,31 @@
 
 .foot {
   background-color: #4ea2de;
+  position: relative;
+  width: 100%;
+}
+
+.form {
+  padding-bottom: 25px;
+}
+
+.login-form-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  width: 40%;
+}
+
+.script-form-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  width: 50%;
+}
+
+.signup-form-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  width: 40%; 
 }

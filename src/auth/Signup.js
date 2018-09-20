@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
+import { Button, Card, Row, Col, Input } from 'react-materialize';
+
 
 
 class Signup extends Component {
@@ -61,19 +63,21 @@ class Signup extends Component {
         )   
     } else {
         return (
-            <div>
-                <h2>Create a new patient</h2>
-                <form onSubmit={this.handleSubmit}>
+            <div className="container signup-form-container center z-depth-1">
+                <h2>Create a new client</h2>
+                <form className="form" onSubmit={this.handleSubmit}>
                     <div>
-                        <input name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} />
+                        <Input name="name" label="Full Name" value={this.state.name} onChange={this.handleNameChange} />
                     </div>
                     <div>
-                        <input name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
+                        <Input name="email" label="E-Mail" value={this.state.email} onChange={this.handleEmailChange} />
                     </div>
                     <div>
-                        <input name="password" placeholder="Password"  type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                        <Input name="password" label="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
                     </div>
-                    <input type="submit" value="Register" className="button" />
+                    <div>
+                        <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
+                    </div>
                 </form>
             </div>
         )
