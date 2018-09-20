@@ -65,7 +65,7 @@ class Signup extends Component {
         )   
     } else {
         return (
-            <div className="container form-container z-depth-1 center">
+            <div className="container script-form-container z-depth-1 center">
                 <h2>Create a new Workout</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <div>
@@ -81,8 +81,9 @@ class Signup extends Component {
                     <label>Materialize Multiple Select</label>
                     </div>
                     <div>
-                        <Button type="submit" value="Register" waves='light'>Submit</Button>
-                    </div>                </form>
+                        <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
+                    </div>
+                </form>
             </div>
         )
     }

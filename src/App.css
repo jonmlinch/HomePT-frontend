@@ -14,9 +14,16 @@
   padding-bottom: 25px;
 }
 
-.form-container {
+.login-form-container {
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 50px;
   width: 40%;
+}
+
+.script-form-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  width: 50%;
 }

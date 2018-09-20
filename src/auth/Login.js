@@ -47,7 +47,7 @@ class Login extends Component {
         return(<Redirect to="/profile" />);
     }
     return (
-      <div className="container form-container center z-depth-2 login">
+      <div className="container login-form-container center z-depth-2 login">
         <main>
           <h2>Login</h2>
           <form className='form' onSubmit={this.handleSubmit}>
