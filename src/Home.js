@@ -15,18 +15,18 @@ class Home extends Component {
           </p>
         </Col>
     		</div>
-    	  <Parallax className="parallax-class" imageSrc={Parallax1}/>
+    	  <Parallax className="parallax-class z-depth-2" imageSrc={Parallax1}/>
     	  <div className="section white">
     	    <div className="row container">
           <Col s="8 right">
     	      <h2 className="header">Why should I use HomePT?</h2>
     	      <p className="grey-text text-darken-3 lighten-3 flow-text">
-            HomePT helps keep clients engaged and motivated by allowing them to always have their exercise regime on hand. Physical therapists can modify a regime in real time for the client to see and helps with gathering feedback easier and faster.
+            HomePT helps keep clients engaged and motivated by allowing them to always have their exercise regimen on hand. Physical therapists can modify a regimen in real time for the client to see and helps with gathering feedback easier and faster.
             </p>
           </Col>
     	    </div>
     	  </div>
-    	  <Parallax className="parallax-class" imageSrc={Parallax2}/>
+    	  <Parallax className="parallax-class z-depth-2" imageSrc={Parallax2}/>
         <div className="row container">
           <h2 className="header">How do I sign up?</h2>
           <p className="grey-text text-darken-3 lighten-3 flow-text">

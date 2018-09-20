@@ -64,7 +64,7 @@ class Signup extends Component {
         } else {
             return (
                 <div className="container script-form-container z-depth-1 center">
-                    <h2>Create a new Workout</h2>
+                    <h2>Create a new workout</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div>
                             <Input name="name" label="Full Name" value={this.state.name} onChange={this.handleNameChange} />
