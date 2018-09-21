@@ -72,7 +72,7 @@ class App extends Component {
               } />
               <Route path="/signup" component={() => (<Signup user={this.state.user} />)} />
               <Route path="/profile" component={
-                () => (<Profile user={this.state.user} updateUser={this.getUser} />)
+                () => (<Profile user={this.state.user} updateUser={this.getUser} checkedLogin={this.state.checkLogin}/>)
               } />
               <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser} />)} />
             </main>
