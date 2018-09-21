@@ -49,6 +49,15 @@
   background-color: #4ea2de;
 }
 
+.therapist-client-info {
+  height: 600px;
+  overflow-y: auto;
+}
+
+
+
+
+
 @media only screen and (max-width: 600px) {
   .parallax img {
     max-width: 200%;
