@@ -49,6 +49,31 @@
   background-color: #4ea2de;
 }
 
+.therapist-client-info {
+  height: 600px;
+  overflow-y: auto;
+}
+
+.therapist-client-name {
+  margin-bottom: 50px;
+}
+
+.client-profile {
+  height: 700px;
+  margin-top: 25px;
+  overflow-y: auto;
+}
+
+.start-regimen-button {
+  margin-bottom: 15px;
+}
+
+.video-exercise-list {
+  margin: 0;
+}
+
+
+
 @media only screen and (max-width: 600px) {
   .parallax img {
     max-width: 200%;
