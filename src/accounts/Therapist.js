@@ -27,8 +27,10 @@ class Therapist extends Component {
                   <option value='3'>Option 3</option>
                 </Input>                
             </Col>
-            <Col className="therapist-client-info center offset-m1 z-depth-1" m={7} s={12}>
-                <h2>Client Info</h2>
+            <Col className="therapist-client-info offset-m1 z-depth-1" m={7} s={12}>
+                <h2 className="center">Client Info</h2>
+                <h4 className="center therapist-client-name">Replace with client name</h4>
+                <h5>Prescribed Exercises</h5>
             </Col>
             </Row>
         </div>
