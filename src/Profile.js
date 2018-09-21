@@ -16,21 +16,27 @@ class Profile extends Component {
     }
 
   render() {
-    if(this.props.user){
-        if(this.props.user.type === 'client'){
-            return (
-                <Patient />
-            )
-        } else {
-            return (
-                <Therapist />
-            )
-        }
-        
+    if(this.props.checkedLogin && this.props.user) {
+      if(this.props.user.type === 'client'){
+        return (
+          <Patient />
+        )
+          } else {
+                return (
+                    <Therapist />
+                )
+            }
+    } else if(this.props.checkedLogin) {
+        return (
+          <Redirect to="/" />
+        );
+    } else {
+        return (
+            <div>
+                <p>Loading ...</p>
+            </div>            
+        ) 
     }
-    return (
-      <Redirect to="/" />
-    );
   }
 }
 

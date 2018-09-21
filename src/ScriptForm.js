@@ -73,7 +73,7 @@ class ScriptForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                     <Row>
-                      <Input s={4} type='select' label="Materialize Select" defaultValue='1'>
+                      <Input s={4} type='select' label="Select Exercises" defaultValue='1'>
                         <option value='1'>Option 1</option>
                         <option value='2'>Option 2</option>
                         <option value='3'>Option 3</option>

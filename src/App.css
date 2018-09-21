@@ -48,3 +48,17 @@
 .card-class {
   background-color: #4ea2de;
 }
+
+@media only screen and (max-width: 600px) {
+  .parallax img {
+    max-width: 200%;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .parallax img {
+    width: 100%;
+  }
+}
+
