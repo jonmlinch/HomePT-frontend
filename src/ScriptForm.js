@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import { Button, Card, Row, Col, Input } from 'react-materialize';
+import ExerciseInput from './ExerciseInput';
 
 
 class ScriptForm extends Component {
@@ -11,6 +12,7 @@ class ScriptForm extends Component {
       this.state = {
           redirect: false,
           clients: [],
+          numExercise: 1,
       };
   };
 
@@ -36,13 +38,18 @@ class ScriptForm extends Component {
             console.log('THERE IS AN ERROR', err)
         })
       }
-      
   }
 
   setRedirect = () => {
     this.setState({
         redirect: true
     })
+  }
+
+  handleAddExercise = () => {
+      this.setState({
+          numExercise: this.state.numExercise + 1
+      })
   }
 
   handleNameChange = (e) => {
@@ -66,22 +73,22 @@ class ScriptForm extends Component {
   }
   
   render() {
+    const exercises = [];
+
+    for (var i = 0; i < this.state.numExercise; i += 1) {
+      exercises.push(<ExerciseInput key={i} number={i} />);
+    };
+
+
+
     if(this.props.checkedLogin && this.props.user) {
         return (
             <div className="container script-form-container z-depth-1 center">
                 <h2>Create a new workout</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                    <Row>
-                      <Input s={4} type='select' label="Materialize Select" defaultValue='1'>
-                        <option value='1'>Option 1</option>
-                        <option value='2'>Option 2</option>
-                        <option value='3'>Option 3</option>
-                      </Input>
-                      <Input s={4} label="Reps" />
-                      <Input s={4} label="Frequency" />
-                    </Row>
-                      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        {exercises}
+                      <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.handleAddExercise}><i class="material-icons">add</i></a>
                     </div>
                     <div>
                       <Row>
