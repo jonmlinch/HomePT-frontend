@@ -33,6 +33,7 @@ class Patient extends Component {
             <h4 className="center">Monday</h4>
             <hr />
             <p className="flow-text">Exercise summary here</p>
+            <Button className="blue lighten-1 right" waves='light'>Feedback</Button>
             <Modal
               header="Monday's Exercise"
               trigger={<Button className="right start-regimen-button">Start Regimen</Button>}>
@@ -42,15 +43,25 @@ class Patient extends Component {
                     <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
                   </div>
                 </Col>
-                <Col m={4}>
-                  <p className="video-exercise-list z-depth-1">
-                    EXERCISE ONE
-                    <br />
-                    EXERCISE TWO
-                  </p>
+                <Col className="exercise-list-overflow" m={4}>
+                <Button className="exercise-button blue lighten-1 btn-small" waves='light'>EXERCISE ONE</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE TWO</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE THREE</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE FOUR</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE FIVE</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE SIX</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE SEVEN</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE EIGHT</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE NINE</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE TEN</Button>
+                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE ELEVEN</Button>
                 </Col>
               </Row>
+              <Row>
+                <Col m={12}>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              </Col>
+              </Row>
             </Modal>
           </Col>
         </Row>
