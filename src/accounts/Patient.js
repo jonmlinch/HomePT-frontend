@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
 import { Button, Card, Row, Col, Input, Modal, MediaBox } from 'react-materialize';
-
+import FeedbackForm from '../FeedbackForm'
 
 
 
@@ -12,6 +12,15 @@ class Patient extends Component {
         this.state = {
             type: ''
         }
+    }
+
+    componentDidMount(){
+        this.checkUser()
+    }
+
+    checkUser = (e) => {
+        console.log('The feedback user is: ', this.props.user)
+        console.log('The feedback checkedLogin value is: ', this.props.checkedUser)
     }
 
 
