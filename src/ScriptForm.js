@@ -35,6 +35,7 @@ class ScriptForm extends Component {
 
   handleExerciseName = (e) =>{
       e.preventDefault();
+      console.log('The value being entered for exerciseId is: ', e.target.value)
       this.setState({
         prescribeExercise: {
             exerciseId: e.target.value,
@@ -95,10 +96,6 @@ class ScriptForm extends Component {
             errorMessage: 'All fields required'
         })
     }
-  }
-
-  handleExerciseArray = (e) => {
-    
   }
 
   handleNames = (e) => {
