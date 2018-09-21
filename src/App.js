@@ -7,6 +7,7 @@ import Home from './Home';
 import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Foot from './layout/Foot';
+import FeedbackForm from './FeedbackForm'
 import Profile from './Profile';
 import Signup from './auth/Signup';
 import ScriptForm from './ScriptForm'
@@ -75,6 +76,7 @@ class App extends Component {
                 () => (<Profile user={this.state.user} updateUser={this.getUser} checkedLogin={this.state.checkLogin}/>)
               } />
               <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser} />)} />
+              <Route path="/feedback" component={() => (<FeedbackForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser} />)} />
             </main>
             <Foot />
           </div>

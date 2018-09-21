@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../constants/server'
+import FeedbackForm from '../FeedbackForm'
 
 
 
@@ -12,11 +13,20 @@ class Patient extends Component {
         }
     }
 
+    componentDidMount(){
+        this.checkUser()
+    }
+
+    checkUser = (e) => {
+        console.log('The feedback user is: ', this.props.user)
+        console.log('The feedback checkedLogin value is: ', this.props.checkedUser)
+    }
+
 
   render() {
         return (
             <div>
-                <h2>This will be the CLIENT profile page</h2>
+                <p>this is the client page</p>
             </div>
         )
     }
