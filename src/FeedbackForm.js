@@ -130,15 +130,35 @@ class FeedbackForm extends Component {
                     <p>{this.state.errorMessage}</p>
                     <form onSubmit={this.handleSubmit}>
                         <div>
-                          <Row>
-                            <Input name="name" type='select' label="Patient Name:"  onChange={this.handleClientId}>
-                              <option value={0}>Choose a patient</option>
-                              {this.state.clients.map(client => <option value={client.id}>{client.name}</option>)}
-                            </Input>
-                          </Row>
+                            <label>Did you have any pain today?</label>
+                            <Row>
+                                <Input s={6} name='group1' type='checkbox' value='Yes' label='Yes' />
+                                <Input s={6} name='group1' type='checkbox' value='No' label='No' />
+                            </Row>
                         </div>
                         <div>
-                          <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.handleAddExercise}><i class="material-icons">add</i></a>
+                            <label>If so, where was it?</label>
+                            <Row>
+                                <Input s={12} type='text' placeholder="Please describe location of pain" />
+                            </Row>
+                        </div>
+                        <div>
+                            <label>On a scale of 1 to 10, how would you rate your pain?</label>
+                            <Row>
+                                <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
+                            </Row>
+                        </div>
+                        <div>
+                            <label>On a scale of 1 to 10, how hard was this workout?</label>
+                            <Row>
+                                <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
+                            </Row>
+                        </div>
+                        <div>
+                            <label>Are there any other comments you would like to share with your physical therapist?</label>
+                            <Row>
+                                <Input s={12} name="name" type='textarea' min="0" max="10" onChange={this.handleClientId}></Input>
+                            </Row>
                         </div>
                         <br></br>
                         <div>
