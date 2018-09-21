@@ -69,14 +69,30 @@ class App extends Component {
               <Nav user={this.state.user} updateUser={this.getUser} />
               <Route exact path="/" component={Home} />
               <Route path="/login" component={
-                () => (<Login user={this.state.user} updateUser={this.getUser} />)
+                () => (<Login 
+                          user={this.state.user} 
+                          updateUser={this.getUser} 
+                          checkedLogin={this.state.checkLogin} />)
               } />
               <Route path="/signup" component={() => (<Signup user={this.state.user} />)} />
               <Route path="/profile" component={
-                () => (<Profile user={this.state.user} updateUser={this.getUser} checkedLogin={this.state.checkLogin}/>)
+                () => (<Profile 
+                          user={this.state.user} 
+                          updateUser={this.getUser} 
+                          checkedLogin={this.state.checkLogin}/>)
               } />
-              <Route path="/prescribe" component={() => (<ScriptForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser} />)} />
-              <Route path="/feedback" component={() => (<FeedbackForm user={this.state.user} checkedLogin={this.state.checkLogin} updateUser={this.getUser} />)} />
+              <Route path="/prescribe" component={
+                () => (<ScriptForm 
+                          user={this.state.user} 
+                          checkedLogin={this.state.checkLogin} 
+                          updateUser={this.getUser} />)
+              } />
+              <Route path="/feedback" component={
+                () => (<FeedbackForm 
+                          user={this.state.user} 
+                          checkedLogin={this.state.checkLogin} 
+                          updateUser={this.getUser} />)
+              } />
             </main>
             <Foot />
           </div>

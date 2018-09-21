@@ -22,9 +22,8 @@ class Therapist extends Component {
             <Col className="center z-depth-1" m={4} s={12}>
                 <h2>List of clients</h2>
                 <Input s={12} textclassName="white-text" type='select' label="Clients" defaultValue='1'>
-                  <option value='1'>Option 1</option>
-                  <option value='2'>Option 2</option>
-                  <option value='3'>Option 3</option>
+                    <option value={0}>Choose a patient</option>
+                    {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
                 </Input>                
             </Col>
             <Col className="therapist-client-info offset-m1 z-depth-1" m={7} s={12}>
