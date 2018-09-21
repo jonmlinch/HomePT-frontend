@@ -6,6 +6,7 @@ function ExerciseInput(props) {
         <div>
             <Row>
                 <Input s={4} onChange={props.updateExercise} type='select' label="Select Exercises" defaultValue='1'>
+                <option value={0}>Choose an exercise</option>
                 {props.exerciseData.map(exercises => <option value={exercises.id}>{exercises.name}</option>)}
                 </Input>
                 <Input s={3} label="Reps"  onChange={props.updateReps} />
