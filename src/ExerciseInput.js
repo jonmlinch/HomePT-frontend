@@ -1,17 +1,16 @@
 import React from 'react';
-import { Button, Card, Row, Col, Input } from 'react-materialize';
+import { Button, Card, Row, Col, Input, Icon } from 'react-materialize';
 
 function ExerciseInput(props) {
     return(
         <div>
             <Row>
-                <Input s={4} type='select' label="Select Exercises" defaultValue='1'>
-                <option value='1'>Option 1</option>
-                <option value='2'>Option 2</option>
-                <option value='3'>Option 3</option>
+                <Input s={4} onChange={props.updateExercise} type='select' label="Select Exercises" defaultValue='1'>
+                {props.exerciseData.map(exercises => <option value={exercises.id}>{exercises.name}</option>)}
                 </Input>
-                <Input s={4} label="Reps" />
-                <Input s={4} label="Frequency" />
+                <Input s={3} label="Reps"  onChange={props.updateReps} />
+                <Input s={4} label="Frequency"  onChange={props.updateFreq} />
+                <a onClick={props.updateExerciseArray}><Icon small className="center" >done</Icon></a>
             </Row>
         </div>
     )
