@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../constants/server'
 import { Button, Card, Row, Col, Input } from 'react-materialize';
-import Calendars from '../Calendar';
 
 
 
@@ -20,18 +19,18 @@ class Therapist extends Component {
         <div className="container">
             <h2>Provider's dashboard</h2>
             <Row>
-            <Col m={4} s={12}>
-                <Card className='card-class' textClassName='white-text' title='Clients'>
-                THIS IS TEST TEXT
-                <Row>
+            <Col className="center z-depth-1" m={4} s={12}>
+                <h2>List of clients</h2>
                 <Input s={12} textclassName="white-text" type='select' label="Clients" defaultValue='1'>
                   <option value='1'>Option 1</option>
                   <option value='2'>Option 2</option>
                   <option value='3'>Option 3</option>
-                </Input>
-                </Row>
-                </Card>
-                <Calendars />
+                </Input>                
+            </Col>
+            <Col className="therapist-client-info offset-m1 z-depth-1" m={7} s={12}>
+                <h2 className="center">Client Info</h2>
+                <h4 className="center therapist-client-name">Replace with client name</h4>
+                <h5>Prescribed Exercises</h5>
             </Col>
             </Row>
         </div>

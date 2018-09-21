@@ -15,11 +15,23 @@ class Profile extends Component {
         }
     }
 
+    componentDidMount(){
+        this.checkUser()
+    }
+
+    checkUser = (e) => {
+        console.log('The Profile user is: ', this.props.user)
+        console.log('The Profile checkedLogin value is: ', this.props.checkedUser)
+    }
+
   render() {
+
     if(this.props.checkedLogin && this.props.user) {
       if(this.props.user.type === 'client'){
         return (
-          <Patient />
+          <Patient 
+          user={this.props.user} 
+          checkedLogin={this.props.checkedLogin}/>
         )
           } else {
                 return (

@@ -18,6 +18,7 @@ class Nav extends Component {
             links = (
                 <span>
                     <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/feedback">Feedback</Link></li>
                     <NavItem href='#' onClick={this.handleLogout}>Logout</NavItem>
                 </span>
             );   
