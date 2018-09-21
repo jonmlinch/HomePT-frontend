@@ -19,7 +19,10 @@ class ScriptForm extends Component {
             exerciseId: '',
             repInfo: '',
             freqInfo: '',
-            },
+          },
+          providerId: '',
+          clientId: '',
+
       };
   };
 
@@ -28,13 +31,11 @@ class ScriptForm extends Component {
       console.log("This is the checkLogin value: ", this.props.checkedLogin)
       this.handleNames();
       this.retrieveExercises();
-  }
-
-  newPrescriptionData = [];
-  
+  }  
 
   handleExerciseName = (e) =>{
       e.preventDefault();
+      console.log('The value being entered for exerciseId is: ', e.target.value)
       this.setState({
         prescribeExercise: {
             exerciseId: e.target.value,
@@ -69,32 +70,59 @@ class ScriptForm extends Component {
     console.log('THIS IS THE PRESCRIBED EXERCISE: ', this.state.prescribeExercise)
   }
 
-  handleExerciseArray = (e) => {
-    const newPrescriptionData = [];
-    newPrescriptionData.push(this.state.prescribeExercise);
-    console.log('old prescription:', this.state.prescriptionData);
-    console.log('new prescriotion:', newPrescriptionData);
-    // this.setState({
-    //   faves: newFaves
-    // })
+  validateAndAppend = () => {
+    if(this.state.prescribeExercise.exerciseId &&
+        this.state.prescribeExercise.repInfo &&
+        this.state.prescribeExercise.freqInfo){
+        // Data is valid! Append it.
+        const newPrescriptionData = this.state.prescriptionData;
+        newPrescriptionData.push(this.state.prescribeExercise);
+        console.log('old prescription:', this.state.prescriptionData);
+        console.log('new prescriotion:', newPrescriptionData);
+        this.setState({
+            errorMessage: '',
+            prescribeExercise: {
+                exerciseId: '',
+                repInfo: '',
+                freqInfo: ''
+            },
+            prescriptionData: newPrescriptionData,
+            numExercise: this.state.numExercise + 1
+        })
+    }
+    else {
+        // At least one data field not entered
+        this.setState({
+            errorMessage: 'All fields required'
+        })
+    }
   }
 
   handleNames = (e) => {
-      //e.preventDefault();
       console.log('Getting those clients for provider', this.props.user)
-      const newClient = this.state.clients;
       if(this.props.user){
         axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
         .then( result => {
             console.log(result.data.clients)
                 this.setState({
-                    clients: result.data.clients
+                    clients: result.data.clients,
+                    providerId: this.props.user.id
                 })
                 console.log(this.state.clients)
         }).catch(err => {
             console.log('THERE IS AN ERROR', err)
         })
       }
+  }
+
+  handleClientId = (e) => {
+      e.preventDefault();
+      console.log("The current client ID is: ", this.state.clientId)
+      this.setState({
+          clientId: e.target.value
+      })
+      console.log("The new client ID is: ", this.state.clientId)
+      console.log("This is the Provider ID: ", this.state.providerId)
   }
 
   setRedirect = () => {
@@ -104,9 +132,7 @@ class ScriptForm extends Component {
   }
 
   handleAddExercise = () => {
-      this.setState({
-          numExercise: this.state.numExercise + 1
-      })
+      this.validateAndAppend()
   }
 
   retrieveExercises = () => {
@@ -125,14 +151,15 @@ class ScriptForm extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      console.log('The exercise object is: ', this.state.prescribeExercise)
-//       console.log(this.state);
-//       axios.post(SERVER_URL + '/auth/signup', this.state)
-//       .then(result => {
-//           this.setRedirect();
-//       }).catch( err => {
-//           console.log('ERROR', err.response);
-//       });
+      console.log('The exercise object is: ', this.state.prescriptionData);
+      console.log('The state I am sending is: ', this.state);
+      this.validateAndAppend()
+      axios.post(SERVER_URL + '/prescriptions', this.state)
+      .then(result => {
+          this.setRedirect();
+      }).catch(err => {
+          console.log('The error from sending presciption is: ', err);
+      })
   };
   
   render() {
@@ -145,48 +172,54 @@ class ScriptForm extends Component {
         exerciseData={this.state.exerciseData} 
         updateExercise={this.handleExerciseName}
         updateReps={this.handleRepInfo}
-        updateFreq={this.handleFreqInfo}
-        updateExerciseArray={this.handleExerciseArray} />);
+        updateFreq={this.handleFreqInfo} />);
     };
 
 
-
-    if(this.props.checkedLogin && this.props.user) {
+    if (this.state.redirect === false) {
+        if(this.props.checkedLogin && this.props.user) {
+            return (
+                <div className="container script-form-container z-depth-1 center">
+                    <h2>Create a new workout</h2>
+                    <p>{this.state.errorMessage}</p>
+                    <form onSubmit={this.handleSubmit}>
+                        <div>
+                          <Row>
+                            <Input name="name" type='select' label="Patient Name:"  onChange={this.handleClientId}>
+                              <option value={0}>Choose a patient</option>
+                              {this.state.clients.map(client => <option value={client.id}>{client.name}</option>)}
+                            </Input>
+                          </Row>
+                        </div>
+                        <div>
+                            {exercises}
+                          <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.handleAddExercise}><i class="material-icons">add</i></a>
+                        </div>
+                        <br></br>
+                        <div>
+                            <Button className="blue darken-1" type="submit" value="Register" waves='light' onClick={this.handleSubmit}>Submit</Button>
+                        </div>
+                    </form>
+                </div>
+            ) 
+        } else if(this.props.checkedLogin) {
+            return (
+                <Redirect to="/" />
+            )
+        } else {
+            return (
+                <div>
+                    <p>Loading ...</p>
+                </div>
+                
+            )  
+        }
+      } else {
         return (
-            <div className="container script-form-container z-depth-1 center">
-                <h2>Create a new workout</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                      <Row>
-                        <Input name="name" type='select' label="Patient Name:"  >
-                          {this.state.clients.map(client => <option value={client.name}>{client.name}</option>)}
-                        </Input>
-                      </Row>
-                    </div>
-                    <div>
-                        {exercises}
-                      <a class="btn-floating btn-large waves-effect waves-light red" onClick={this.handleAddExercise}><i class="material-icons">add</i></a>
-                    </div>
-                    <br></br>
-                    <div>
-                        <Button className="blue darken-1" type="submit" value="Register" waves='light' onClick={this.handleSubmit}>Submit</Button>
-                    </div>
-                </form>
-            </div>
-        ) 
-    } else if(this.props.checkedLogin) {
-        return (
-            <Redirect to="/" />
+            <Redirect to="/profile" />
         )
-    } else {
-        return (
-            <div>
-                <p>Loading ...</p>
-            </div>
-            
-        )  
     }
-  }
+  }   
 }
 
 export default ScriptForm;
