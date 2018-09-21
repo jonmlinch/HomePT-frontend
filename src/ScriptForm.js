@@ -19,7 +19,7 @@ class ScriptForm extends Component {
             exerciseId: '',
             repInfo: '',
             freqInfo: '',
-            },
+          },
           providerId: '',
           clientId: '',
 
@@ -31,10 +31,7 @@ class ScriptForm extends Component {
       console.log("This is the checkLogin value: ", this.props.checkedLogin)
       this.handleNames();
       this.retrieveExercises();
-  }
-
-  newPrescriptionData = [];
-  
+  }  
 
   handleExerciseName = (e) =>{
       e.preventDefault();
@@ -72,18 +69,39 @@ class ScriptForm extends Component {
     console.log('THIS IS THE PRESCRIBED EXERCISE: ', this.state.prescribeExercise)
   }
 
+  validateAndAppend = () => {
+    if(this.state.prescribeExercise.exerciseId &&
+        this.state.prescribeExercise.repInfo &&
+        this.state.prescribeExercise.freqInfo){
+        // Data is valid! Append it.
+        const newPrescriptionData = this.state.prescriptionData;
+        newPrescriptionData.push(this.state.prescribeExercise);
+        console.log('old prescription:', this.state.prescriptionData);
+        console.log('new prescriotion:', newPrescriptionData);
+        this.setState({
+            errorMessage: '',
+            prescribeExercise: {
+                exerciseId: '',
+                repInfo: '',
+                freqInfo: ''
+            },
+            prescriptionData: newPrescriptionData,
+            numExercise: this.state.numExercise + 1
+        })
+    }
+    else {
+        // At least one data field not entered
+        this.setState({
+            errorMessage: 'All fields required'
+        })
+    }
+  }
+
   handleExerciseArray = (e) => {
-    const newPrescriptionData = this.state.prescriptionData;
-    newPrescriptionData.push(this.state.prescribeExercise);
-    console.log('old prescription:', this.state.prescriptionData);
-    console.log('new prescriotion:', newPrescriptionData);
-    // this.setState({
-    //   faves: newFaves
-    // })
+    
   }
 
   handleNames = (e) => {
-      //e.preventDefault();
       console.log('Getting those clients for provider', this.props.user)
       if(this.props.user){
         axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
@@ -117,9 +135,7 @@ class ScriptForm extends Component {
   }
 
   handleAddExercise = () => {
-      this.setState({
-          numExercise: this.state.numExercise + 1
-      })
+      this.validateAndAppend()
   }
 
   retrieveExercises = () => {
@@ -140,6 +156,7 @@ class ScriptForm extends Component {
       e.preventDefault();
       console.log('The exercise object is: ', this.state.prescriptionData);
       console.log('The state I am sending is: ', this.state);
+      this.validateAndAppend()
       axios.post(SERVER_URL + '/prescriptions', this.state)
       .then(result => {
           this.setRedirect();
@@ -158,8 +175,7 @@ class ScriptForm extends Component {
         exerciseData={this.state.exerciseData} 
         updateExercise={this.handleExerciseName}
         updateReps={this.handleRepInfo}
-        updateFreq={this.handleFreqInfo}
-        updateExerciseArray={this.handleExerciseArray} />);
+        updateFreq={this.handleFreqInfo} />);
     };
 
 
@@ -168,10 +184,11 @@ class ScriptForm extends Component {
             return (
                 <div className="container script-form-container z-depth-1 center">
                     <h2>Create a new workout</h2>
+                    <p>{this.state.errorMessage}</p>
                     <form onSubmit={this.handleSubmit}>
                         <div>
                           <Row>
-                            <Input name="name" type='select' label="Patient Name:"  onChange={this.handleClientId} require>
+                            <Input name="name" type='select' label="Patient Name:"  onChange={this.handleClientId}>
                               <option value={0}>Choose a patient</option>
                               {this.state.clients.map(client => <option value={client.id}>{client.name}</option>)}
                             </Input>
