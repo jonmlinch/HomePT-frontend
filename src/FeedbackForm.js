@@ -130,32 +130,36 @@ class FeedbackForm extends Component {
                     <p>{this.state.errorMessage}</p>
                     <form onSubmit={this.handleSubmit}>
                         <div>
-                            <label>Did you have any pain today?</label>
+                            <label className="flow-text">Did you have any pain today?</label>
                             <Row>
-                                <Input s={6} name='group1' type='checkbox' value='Yes' label='Yes' />
-                                <Input s={6} name='group1' type='checkbox' value='No' label='No' />
+                              <Col s={4} className="offset-s5">
+                                <Input className="left" name='group1' type='checkbox' value='Yes' label='Yes' />
+                                <Input className="right" name='group1' type='checkbox' value='No' label='No' />
+                              </Col>
                             </Row>
                         </div>
                         <div>
-                            <label>If so, where was it?</label>
+                            <label className="flow-text">If so, where was it?</label>
                             <Row>
-                                <Input s={12} type='text' placeholder="Please describe location of pain" />
+                              <Col s={12}>
+                                <Input type='text' placeholder="Please describe location of pain" />
+                              </Col>
                             </Row>
                         </div>
                         <div>
-                            <label>On a scale of 1 to 10, how would you rate your pain?</label>
-                            <Row>
-                                <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
-                            </Row>
-                        </div>
-                        <div>
-                            <label>On a scale of 1 to 10, how hard was this workout?</label>
+                            <label className="flow-text">On a scale of 1 to 10, how would you rate your pain?</label>
                             <Row>
                                 <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
                             </Row>
                         </div>
                         <div>
-                            <label>Are there any other comments you would like to share with your physical therapist?</label>
+                            <label className="flow-text">On a scale of 1 to 10, how hard was this workout?</label>
+                            <Row>
+                                <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
+                            </Row>
+                        </div>
+                        <div>
+                            <label className="flow-text">Are there any other comments you would like to share with your physical therapist?</label>
                             <Row>
                                 <Input s={12} name="name" type='textarea' min="0" max="10" onChange={this.handleClientId}></Input>
                             </Row>

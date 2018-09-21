@@ -28,7 +28,7 @@ class Patient extends Component {
   render() {
     return (
       <div>
-        <h2 className="center">Client's Profile</h2>
+        <h2 className="center">Client's Dashboard</h2>
         <Row>
           <Col className="z-depth-1 offset-m3" m={6}>
             <h4 className="center">Monday</h4>
@@ -37,15 +37,15 @@ class Patient extends Component {
             <Modal
               header="Monday's Exercise"
               actions={<div>
-                <Button className="btn waves-effect waves-light btn-flat modal-action modal-close button">Close</Button>
                 <Link to="/feedback"><Button className="btn waves-effect waves-light btn-flat modal-action modal-close button">Feedback</Button></Link> 
+                <Button className="btn waves-effect waves-light btn-flat modal-action modal-close button">Close</Button>
               </div>
               }
               trigger={<Button className="blue lighten-1 right start-regimen-button">Start Regimen</Button>}>
               <Row>
                 <Col m={8}>
                   <div class="video-container">
-                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen="1"></iframe>
                   </div>
                 </Col>
                 <Col className="exercise-list-overflow" m={4}>
