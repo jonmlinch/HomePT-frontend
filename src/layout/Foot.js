@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, Row, Col, Navbar, NavItem, Footer } from 'react-materialize';
+import { Footer } from 'react-materialize';
 
 
 class Foot extends Component {
