@@ -76,14 +76,15 @@
   width: 100%;
   margin-bottom: 18px;
 }
- .exercise-list-overflow {
+
+.exercise-list-overflow {
   overflow-y: scroll;
   height: 364px;
- }
+}
 
- .video-container {
+.video-container {
   height: 364px;
- }
+}
 
 .button:hover {
   background-color: #42a5f5;
