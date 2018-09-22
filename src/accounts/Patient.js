@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Row, Col, Modal } from 'react-materialize';
+import axios from 'axios';
+import SERVER_URL from '../constants/server';
+import { Button, Card, Row, Col, Input, Modal, MediaBox } from 'react-materialize';
+import FeedbackForm from '../FeedbackForm';
 import {Link} from 'react-router-dom';
-import ClientWorkout from '../ClientWorkout';
+import ClientWorkout from '../ClientWorkout'
 
 
 
@@ -12,7 +15,8 @@ class Patient extends Component {
             type: '',
             providerId: '',
             clientId: '',
-            prescriptionInfo: ''
+            prescriptionInfo: '',
+            exerciseInfo: []
         }
     }
 
@@ -35,9 +39,12 @@ class Patient extends Component {
         axios.get(SERVER_URL + '/users/prescription/' + this.props.user.id)
         .then(results => {
             console.log('The result I get from the GET request is', results.data.result)
+            const newExerciseInfo = results.data.result;
             this.setState({
-                prescriptionInfo: results.data.result
+                prescriptionInfo: newExerciseInfo,
+                exerciseInfo: newExerciseInfo.prescription.assignedExercises,
             })
+            console.log('The exercise info is', this.state.exerciseInfo)
         }).catch(err => {
             console.log('There was an error getting the clientInfo')
         })
@@ -51,7 +58,7 @@ class Patient extends Component {
   render() {
     return (
       <div>
-        <ClientWorkout prescription={this.state.prescriptionInfo} />
+        <ClientWorkout prescription={this.state.prescriptionInfo} excerciseRegimen={this.state.exerciseInfo} />
       </div>
     )
   }
