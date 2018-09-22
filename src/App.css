@@ -50,6 +50,11 @@
 }
 
 .therapist-client-info {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.therapist-client-feedback {
   height: 600px;
   overflow-y: auto;
 }
@@ -62,6 +67,10 @@
   height: 700px;
   margin-top: 25px;
   overflow-y: auto;
+}
+
+.client-profile-margin {
+  margin-bottom: 340px;
 }
 
 .start-regimen-button {
