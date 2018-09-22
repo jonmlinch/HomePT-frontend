@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
-import { Button, Card, Row, Col, Input, Modal, MediaBox } from 'react-materialize';
+import { Button, Row, Col, Modal } from 'react-materialize';
 import FeedbackForm from './FeedbackForm';
 import {Link} from 'react-router-dom';
 
@@ -46,8 +46,8 @@ class ClientWorkout extends Component {
 
   render() {
     return (
-      <div>
-        <h2 className="center" onChange={this.starterVid}>{this.props.prescription.name}'s Dashboard</h2>
+      <div className="client-profile-margin">
+        <h2 className="center">{this.props.prescription.name}'s Dashboard</h2>
         <Row>
           <Col className="z-depth-1 offset-m3" m={6}>
             <h4 className="center">Your Current Regimen</h4>

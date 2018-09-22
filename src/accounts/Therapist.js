@@ -49,26 +49,58 @@ class Therapist extends Component {
         <div className="container">
             <h2>Provider's dashboard</h2>
             <Row>
-            <Col className="center z-depth-1" m={4} s={12}>
-                <h2>List of clients</h2>
-                <Input s={12} textclassName="white-text" type='select' label="Clients"  onChange={this.handleClientInfo} defaultValue='1'>
-                    <option value={0}>Choose a patient</option>
-                    {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
-                </Input>                
+            <Col m={4} s={12}>
+              <Row>
+              <Col className="center z-depth-1" m={12} s={12}>
+                  <h3 className="flow-text">List of clients</h3>
+                  <Input s={12} textclassName="white-text" type='select' label="Clients"  onChange={this.handleClientInfo} defaultValue='1'>
+                      <option value={0}>Choose a patient</option>
+                      {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
+                  </Input>
+              </Col>
+              </Row>
+              <Row>
+              <Col className="center z-depth-1 therapist-client-info" m={12} s={12}>
+                 <p className="center flow-text">Prescribed Exercises</p> 
+                 {this.state.exerciseInfo.map(exercises => (
+                 <div>
+                   <Row>
+                     <Col className="" s={4}>
+                       <p>Exercise: {exercises.exercise.name}</p>
+                     </Col>
+                     <Col className="" s={4}>
+                       <p>Reps: {exercises.reps}</p>
+                     </Col>
+                     <Col className="" s={4}>
+                       <p>Frequency: {exercises.freq}</p>
+                     </Col>
+                   </Row>
+                 </div>
+                 ))}                   
+              </Col>
+              </Row>
             </Col>
-            <Col className="therapist-client-info offset-m1 z-depth-1" m={7} s={12}>
-                <h2 className="center">Client Info</h2>
-                <hr/>
-                <h4 className="center therapist-client-name">{this.state.clientInfo.name}</h4>
-                <h5>Prescribed Exercises</h5> 
-                {this.state.exerciseInfo.map(exercises => (
-                <div>
-                    <h6>{exercises.exercise.name}</h6>
-                    <p>{exercises.reps}</p>
-                    <p>{exercises.freq}</p>
-                </div>
-                ))}               
-            </Col>
+             <Col className="therapist-client-feedback offset-m1 z-depth-1" m={7} s={12}>
+                 <h2 className="center">Client Info</h2>
+                 <hr/>
+                 <h3 className="center therapist-client-name">{this.state.clientInfo.name}</h3>
+                 <h3 className="center">Prescribed Exercises</h3> 
+                 {this.state.exerciseInfo.map(exercises => (
+                 <div>
+                   <Row>
+                     <Col className="flow-text" s={4}>
+                       <p>Exercise: {exercises.exercise.name}</p>
+                     </Col>
+                     <Col className="flow-text" s={4}>
+                       <p>Reps: {exercises.reps}</p>
+                     </Col>
+                     <Col className="flow-text" s={4}>
+                       <p>Frequency: {exercises.freq}</p>
+                     </Col>
+                   </Row>
+                 </div>
+                 ))}               
+              </Col>            
             </Row>
         </div>
       )
