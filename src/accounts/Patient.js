@@ -11,7 +11,8 @@ class Patient extends Component {
     constructor(props){
         super(props);
         this.state = {
-            type: ''
+            type: '',
+            providerId: ''
         }
     }
 
@@ -22,6 +23,14 @@ class Patient extends Component {
     checkUser = (e) => {
         console.log('The feedback user is: ', this.props.user)
         console.log('The feedback checkedLogin value is: ', this.props.checkedUser)
+        this.setState({
+            providerId: this.props.user.provider
+        })
+        console.log('The provider Id is: ', this.state.providerId)
+    }
+
+    getExercises = (e) => {
+        console.log('Now the state is: ', this.state)
     }
 
 
@@ -33,7 +42,7 @@ class Patient extends Component {
           <Col className="z-depth-1 offset-m3" m={6}>
             <h4 className="center">Monday</h4>
             <hr />
-            <p className="flow-text">Exercise summary here</p>
+            <p className="flow-text">Your workout today is: </p>
             <Modal
               header="Monday's Exercise"
               actions={<div>
