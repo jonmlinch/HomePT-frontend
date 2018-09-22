@@ -46,7 +46,6 @@ class Signup extends Component {
   handleSubmit = (e) => {
       e.preventDefault();
       const toSubmit = this.state
-      toSubmit.provider = this.props.user.id
       console.log(this.state);
       axios.post(SERVER_URL + '/auth/signup', toSubmit)
       .then(result => {
