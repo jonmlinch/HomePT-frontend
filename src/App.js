@@ -10,6 +10,7 @@ import Foot from './layout/Foot';
 import FeedbackForm from './FeedbackForm'
 import Profile from './Profile';
 import Signup from './auth/Signup';
+import ProviderSignup from './auth/ProviderSignup';
 import ScriptForm from './ScriptForm'
 import { deleteCookie, getCookie } from './helpers/helpers';
 
@@ -73,6 +74,7 @@ class App extends Component {
                           updateUser={this.getUser} 
                           checkedLogin={this.state.checkLogin} />)
               } />
+              <Route path="/providersignup" component={() => (<ProviderSignup user={this.state.user} />)} />
               <Route path="/signup" component={() => (<Signup user={this.state.user} />)} />
               <Route path="/profile" component={
                 () => (<Profile 

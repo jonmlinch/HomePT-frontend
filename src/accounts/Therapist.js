@@ -13,6 +13,7 @@ class Therapist extends Component {
             prescribedExercises: [],
             clientInfo: '',
             exerciseInfo: [],
+            commentInfo: []
         }
     }
 
@@ -22,6 +23,18 @@ class Therapist extends Component {
         })
         console.log('The client info is: ', this.state.clientId)
         this.findExerciseInfo();
+    }
+
+    handleCommentInfo = (e) => {
+        axios.get(SERVER_URL + '/comments/' + this.state.clientId)
+        .then(results => {
+            this.setState({
+                commentInfo: results.data.comments
+            })
+            console.log('This is the new state of comments ', this.state.commentInfo)
+        }).catch(err => {
+            console.log('We are having trouble fetching comments')
+        })
     }
 
     findExerciseInfo = (e) => {
@@ -37,7 +50,7 @@ class Therapist extends Component {
             })
             console.log('The clientInfo is ', this.state.clientInfo)
             console.log('The assigned exercises are: ', this.state.exerciseInfo)
-            //this.getExercises()
+            this.handleCommentInfo();
         }).catch(err => {
             console.log('There was an error getting the client prescription info')
         })
@@ -47,28 +60,64 @@ class Therapist extends Component {
     
       return (
         <div className="container">
-            <h2>Provider's dashboard</h2>
+            <h2>{this.props.user.name}'s dashboard</h2>
             <Row>
-            <Col className="center z-depth-1" m={4} s={12}>
-                <h2>List of clients</h2>
-                <Input s={12} textclassName="white-text" type='select' label="Clients"  onChange={this.handleClientInfo} defaultValue='1'>
-                    <option value={0}>Choose a patient</option>
-                    {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
-                </Input>                
+            <Col m={4} s={12}>
+              <Row>
+              <Col className="center z-depth-1" m={12} s={12}>
+                  <h3 className="flow-text">List of clients</h3>
+                  <Input s={12} textclassName="white-text" type='select' label="Clients"  onChange={this.handleClientInfo} defaultValue='1'>
+                      <option value={0}>Choose a patient</option>
+                      {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
+                  </Input>
+              </Col>
+              </Row>
+              <Row>
+              <Col className="center z-depth-1 therapist-client-info" m={12} s={12}>
+                 <p className="center flow-text">Prescribed Exercises</p> 
+                 {this.state.exerciseInfo.map(exercises => (
+                 <div>
+                   <Row>
+                     <Col className="" s={4}>
+                       <p>Exercise: {exercises.exercise.name}</p>
+                     </Col>
+                     <Col className="" s={4}>
+                       <p>Reps: {exercises.reps}</p>
+                     </Col>
+                     <Col className="" s={4}>
+                       <p>Frequency: {exercises.freq}</p>
+                     </Col>
+                   </Row>
+                 </div>
+                 ))}                   
+              </Col>
+              </Row>
             </Col>
-            <Col className="therapist-client-info offset-m1 z-depth-1" m={7} s={12}>
-                <h2 className="center">Client Info</h2>
-                <hr/>
-                <h4 className="center therapist-client-name">{this.state.clientInfo.name}</h4>
-                <h5>Prescribed Exercises</h5> 
-                {this.state.exerciseInfo.map(exercises => (
-                <div>
-                    <h6>{exercises.exercise.name}</h6>
-                    <p>{exercises.reps}</p>
-                    <p>{exercises.freq}</p>
-                </div>
-                ))}               
-            </Col>
+             <Col className="therapist-client-feedback offset-m1 z-depth-1" m={7} s={12}>
+                 <h2 className="center">Client Info</h2>
+                 <hr/>
+                 <h3 className="center therapist-client-name">Feedback</h3>
+                 <h5 className="center">Patient's Name: {this.state.clientInfo.name}</h5> 
+                 {this.state.commentInfo.map(comments => (
+                 <div>
+                     <Row className="flow-text" s={2}>
+                       <p>Pain?: {comments.feedback.pain}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Pain Location: {comments.feedback.painLocation}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Pain Severity: {comments.feedback.painSeverity}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>RPE: {comments.feedback.RPEData}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Additional Comments: {comments.feedback.addlComments}</p>
+                     </Row>
+                 </div>
+                 ))}               
+              </Col>            
             </Row>
         </div>
       )

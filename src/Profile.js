@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, NavLink, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import Patient from './accounts/Patient';
@@ -17,13 +17,7 @@ class Profile extends Component {
     }
 
     componentDidMount(){
-        this.checkUser();
         this.handleNames();
-    }
-
-    checkUser = (e) => {
-        console.log('The Profile user is: ', this.props.user)
-        console.log('The Profile checkedLogin value is: ', this.props.checkedUser)
     }
 
     handleNames = (e) => {
@@ -51,7 +45,7 @@ class Profile extends Component {
         )
           } else {
                 return (
-                    <Therapist clients={this.state.clients}/>
+                    <Therapist clients={this.state.clients} user={this.props.user}/>
                 )
             }
     } else if(this.props.checkedLogin) {
