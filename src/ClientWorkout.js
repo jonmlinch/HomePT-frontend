@@ -13,15 +13,22 @@ class ClientWorkout extends Component {
         this.state = {
             type: '',
             providerId: '',
-            clientId: ''
+            clientId: '',
+            workoutVid: ''
         }
     }
     componentDidMount(){
         console.log(this.props.prescription)
+        console.log('The exercise regimin is', this.props.exerciseRegimen)
     }
 
-    getExercises = (e) => {
-        console.log('Now the state is: ', this.state)
+    handleVideo = (e) => {
+        e.preventDefault();
+        console.log('This is the button click', e.target.value)
+        this.setState({
+            workoutVid: e.target.value
+        })
+        console.log('the state of workoutVid is', this.state.workoutVid)
     }
 
 
@@ -45,21 +52,13 @@ class ClientWorkout extends Component {
               <Row>
                 <Col m={8}>
                   <div class="video-container">
-                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen="1"></iframe>
+                  <iframe width="853" height="480" src={this.state.workoutVid} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></iframe>
                   </div>
                 </Col>
                 <Col className="exercise-list-overflow" m={4}>
-                <Button className="exercise-button blue lighten-1 btn-small" waves='light'>EXERCISE ONE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE TWO</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE THREE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE FOUR</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE FIVE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE SIX</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE SEVEN</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE EIGHT</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE NINE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE TEN</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE ELEVEN</Button>
+                {this.props.exerciseRegimen.map(exercises => (
+                    <Button onClick={this.handleVideo} className="exercise-button blue lighten-1 btn-small" waves='light' value={exercises.exercise.video}>{exercises.exercise.name}</Button>
+                ))}
                 </Col>
               </Row>
               <Row>
