@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import ClientWorkout from '../ClientWorkout';
-import SERVER_URL from '../constants/server';
 import axios from 'axios';
-
+import SERVER_URL from '../constants/server';
+import FeedbackForm from '../FeedbackForm';
+import {Link} from 'react-router-dom';
+import ClientWorkout from '../ClientWorkout'
 
 
 
@@ -13,7 +14,8 @@ class Patient extends Component {
             type: '',
             providerId: '',
             clientId: '',
-            prescriptionInfo: ''
+            prescriptionInfo: '',
+            exerciseInfo: []
         }
     }
 
@@ -36,9 +38,12 @@ class Patient extends Component {
         axios.get(SERVER_URL + '/users/prescription/' + this.props.user.id)
         .then(results => {
             console.log('The result I get from the GET request is', results.data.result)
+            const newExerciseInfo = results.data.result;
             this.setState({
-                prescriptionInfo: results.data.result
+                prescriptionInfo: newExerciseInfo,
+                exerciseInfo: newExerciseInfo.prescription.assignedExercises,
             })
+            console.log('The exercise info is', this.state.exerciseInfo)
         }).catch(err => {
             console.log('There was an error getting the clientInfo')
         })
@@ -52,7 +57,7 @@ class Patient extends Component {
   render() {
     return (
       <div>
-        <ClientWorkout prescription={this.state.prescriptionInfo} />
+        <ClientWorkout prescription={this.state.prescriptionInfo} excerciseRegimen={this.state.exerciseInfo} />
       </div>
     )
   }

@@ -13,7 +13,6 @@ class Therapist extends Component {
             prescribedExercises: [],
             clientInfo: '',
             exerciseInfo: [],
-            exercises: []
         }
     }
 
@@ -35,47 +34,14 @@ class Therapist extends Component {
             this.setState({
                 clientInfo: newClientInfo,
                 exerciseInfo: newClientInfo.prescription.assignedExercises,
-                exercises: []
             })
             console.log('The clientInfo is ', this.state.clientInfo)
             console.log('The assigned exercises are: ', this.state.exerciseInfo)
-            this.getExercises()
+            //this.getExercises()
         }).catch(err => {
             console.log('There was an error getting the client prescription info')
         })
     }
-
-    getExercises = (e) => {
-        this.state.exerciseInfo.map(exercises => {
-            //console.log('I am going to send exercises', exercises.exercise)
-            axios.get(SERVER_URL + '/exercises/one/' + exercises.exercise)
-            .then(result => {
-                console.log('The getExercise function returns:', result.data.exercise.name)
-                const newExercises = this.state.exercises;
-                newExercises.push(result.data.exercise.name);
-                this.setState({
-                    exercises: newExercises
-                })
-                console.log('The exercises array looks like', this.state.exercises)
-            }).catch(err => {
-                console.log('getExercises is returning an error')
-            })
-        })
-        
-        
-    }
-
-    // handleExercises = () => {
-    //     if(this.state.clientInfo.prescription.assignedExercises){
-    //         {this.state.clientInfo.prescription.assignedExercises.map(exercise => {
-    //             return (<p>{exercise.name}</p>)
-    //         })
-    //       }
-    //     } else {
-    //         return (<p></p>)
-    //     }
-    // }
-
 
   render() {
     
@@ -95,7 +61,21 @@ class Therapist extends Component {
                 <hr/>
                 <h4 className="center therapist-client-name">{this.state.clientInfo.name}</h4>
                 <h5>Prescribed Exercises</h5> 
-                {this.state.exercises.map(exercise => <p>{exercise}</p>)}               
+                {this.state.exerciseInfo.map(exercises => (
+                <div>
+                  <Row>
+                    <Col className="flow-text" s={4}>
+                      <p>Exercise: {exercises.exercise.name}</p>
+                    </Col>
+                    <Col className="flow-text" s={4}>
+                      <p>Reps: {exercises.reps}</p>
+                    </Col>
+                    <Col className="flow-text" s={4}>
+                      <p>Frequency: {exercises.freq}</p>
+                    </Col>
+                  </Row>
+                </div>
+                ))}               
             </Col>
             </Row>
         </div>
