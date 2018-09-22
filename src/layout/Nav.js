@@ -17,8 +17,7 @@ class Nav extends Component {
         if(this.props.user.type === 'client'){
             links = (
                 <span>
-                    <li><Link to="/profile">Profile</Link></li>
-                    <li><Link to="/feedback">Feedback</Link></li>
+                    <li><Link to="/profile">Dashboard</Link></li>
                     <NavItem href='#' onClick={this.handleLogout}>Logout</NavItem>
                 </span>
             );   
