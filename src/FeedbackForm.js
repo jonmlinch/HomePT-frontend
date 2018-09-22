@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
-import { Button, Card, Row, Col, Input } from 'react-materialize';
-import ExerciseInput from './ExerciseInput';
+import { Button, Row, Col, Input } from 'react-materialize';
 
 
 class FeedbackForm extends Component {

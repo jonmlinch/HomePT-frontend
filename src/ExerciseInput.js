@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Row, Col, Input, Icon } from 'react-materialize';
+import { Row, Input } from 'react-materialize';
 
 function ExerciseInput(props) {
     return(

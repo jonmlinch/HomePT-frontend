@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
 import { setCookie } from '../helpers/helpers'
-import { Button, Card, Row, Col, Input } from 'react-materialize';
+import { Button, Input } from 'react-materialize';
 
 
 class Login extends Component {

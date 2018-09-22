@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Parallax, Row, Col } from 'react-materialize';
+import { Parallax, Col } from 'react-materialize';
 import Parallax1 from './woman-running.jpg';
 import Parallax2 from './yoga-mat.jpg';
 

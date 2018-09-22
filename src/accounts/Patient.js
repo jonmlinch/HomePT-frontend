@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import SERVER_URL from '../constants/server';
-import { Button, Card, Row, Col, Input, Modal, MediaBox } from 'react-materialize';
-import FeedbackForm from '../FeedbackForm';
+import { Button, Row, Col, Modal } from 'react-materialize';
 import {Link} from 'react-router-dom';
 
 
@@ -44,8 +41,8 @@ class Patient extends Component {
               trigger={<Button className="blue lighten-1 right start-regimen-button">Start Regimen</Button>}>
               <Row>
                 <Col m={8}>
-                  <div class="video-container">
-                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen="1"></iframe>
+                  <div className="video-container">
+                    <iframe title="video" width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameBorder="0" allowFullScreen="1"></iframe>
                   </div>
                 </Col>
                 <Col className="exercise-list-overflow" m={4}>
