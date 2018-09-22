@@ -27,7 +27,7 @@ class ClientWorkout extends Component {
 
   render() {
     return (
-      <div>
+      <div className="client-profile-margin">
         <h2 className="center">{this.props.prescription.name}'s Dashboard</h2>
         <Row>
           <Col className="z-depth-1 offset-m3" m={6}>

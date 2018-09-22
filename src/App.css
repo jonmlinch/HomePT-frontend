@@ -64,6 +64,10 @@
   overflow-y: auto;
 }
 
+.client-profile-margin {
+  margin-bottom: 340px;
+}
+
 .start-regimen-button {
   margin-bottom: 15px;
 }
