@@ -58,7 +58,7 @@ class Patient extends Component {
   render() {
     return (
       <div>
-        <ClientWorkout prescription={this.state.prescriptionInfo} excerciseRegimen={this.state.exerciseInfo} />
+        <ClientWorkout prescription={this.state.prescriptionInfo} exerciseRegimen={this.state.exerciseInfo} />
       </div>
     )
   }
