@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
-import { Button, Card, Row, Col, Input } from 'react-materialize';
-import ExerciseInput from './ExerciseInput';
+import { Button, Row, Col, Input } from 'react-materialize';
 
 
 class FeedbackForm extends Component {
@@ -103,45 +102,39 @@ class FeedbackForm extends Component {
                     <h2>Share Your Feedback</h2>
                     <p>{this.state.errorMessage}</p>
                     <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <label className="flow-text">Did you have any pain today?</label>
-                            <Row>
-                              <Col s={4} className="offset-s5">
-                                <Input className="left" name='group1' type='checkbox' value='Yes' label='Yes' onChange={this.handlePain} />
-                                <Input className="right" name='group1' type='checkbox' value='No' label='No' onChange={this.handlePain} />
-                              </Col>            
-                            </Row>
-                        </div>
-                        <div>
-                            <label className="flow-text">If so, where was it?</label>
-                            <Row>
-                              <Col s={12}>
-                                <Input type='text' placeholder="Please describe location of pain" onChange={this.handlePainLocation} />
-                              </Col>
-                            </Row>
-                        </div>
-                        <div>
-                            <label className="flow-text">On a scale of 1 to 10, how would you rate your pain?</label>
-                            <Row>
-                                <Input s={12} name="name" type='range' min="0" max="10" defaultValue="5" onChange={this.handlePainSeverity}></Input>
-                            </Row>
-                        </div>
-                        <div>
-                            <label className="flow-text">On a scale of 1 to 10, how hard was this workout?</label>
-                            <Row>
-                                <Input s={12} name="name" type='range' min="0" max="10" defaultValue="5" onChange={this.handleRPE}></Input>
-                            </Row>
-                        </div>
-                        <div>
-                            <label className="flow-text">Are there any other comments you would like to share with your physical therapist?</label>
-                            <Row>
-                                <Input s={12} name="name" type='textarea' min="0" max="10" onChange={this.handleAddlComments}></Input>
-                            </Row>
-                        </div>
-                        <br></br>
-                        <div>
-                            <Button className="blue darken-1" type="submit" value="Register" waves='light' onClick={this.handleSubmit}>Submit</Button>
-                        </div>
+                      <Row>
+                        <Col s={12}>
+                          <label className="flow-text">Did you have any pain today?</label>
+                        </Col>
+                      </Row>
+
+                      <Row>
+                        <Col s={6} className="offset-s5">
+                          <Input name='group1' type='radio' value='Yes' label='Yes' onChange={this.handlePain} />
+                          <Input name='group1' type='radio' value='No' label='No' onChange={this.handlePain} />
+                        </Col>
+                      </Row>
+                      
+                      <Row>
+                        <label className="flow-text">If so, where was it?</label>
+                      </Row>
+                      
+                      <Row>
+                          <Input s={12} type='textarea' placeholder="Please describe location of pain" onChange={this.handlePainLocation} />
+                      </Row>
+                      <label className="flow-text">On a scale of 1 to 10, how would you rate your pain?</label>
+                      
+                      <Input name="name" type='range' min="0" max="10" defaultValue="5" onChange={this.handlePainSeverity}></Input>
+                      
+                      <label className="flow-text">On a scale of 1 to 10, how hard was this workout?</label>
+                      
+                      <Input name="name" type='range' min="0" max="10" defaultValue="5" onChange={this.handleRPE}></Input>
+                      
+                      <label className="flow-text">Are there any other comments you would like to share with your physical therapist?</label>
+                      
+                      <Input name="name" type='textarea' placeholder="Write your comments here" onChange={this.handleAddlComments}></Input>
+                      
+                      <Button className="blue darken-1" type="submit" value="Register" waves='light' onClick={this.handleSubmit}>Submit</Button>
                     </form>
                 </div>
             ) 

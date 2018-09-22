@@ -11,7 +11,6 @@ import FeedbackForm from './FeedbackForm'
 import Profile from './Profile';
 import Signup from './auth/Signup';
 import ScriptForm from './ScriptForm'
-import { Button, Card, Row, Col, Footer } from 'react-materialize';
 import { deleteCookie, getCookie } from './helpers/helpers';
 
 class App extends Component {
