@@ -1,12 +1,39 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, NavLink, Redirect } from 'react-router-dom';
+import axios from 'axios';
+import SERVER_URL from './constants/server';
 import Patient from './accounts/Patient';
 import Therapist from './accounts/Therapist';
 
 
 
 class Profile extends Component {
-    
+    constructor(props){
+        super(props);
+        this.state = {
+            clients: [],
+            providerId: ''
+        }
+    }
+
+    componentDidMount(){
+        this.handleNames();
+    }
+
+    handleNames = (e) => {
+        if(this.props.user){
+          axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
+          .then( result => {
+              this.setState({
+                  clients: result.data.clients,
+                  providerId: this.props.user.id
+              })
+          }).catch(err => {
+              console.log('THERE IS AN ERROR', err)
+          })
+        }
+    }
+
   render() {
 
     if(this.props.checkedLogin && this.props.user) {

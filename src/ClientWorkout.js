@@ -14,22 +14,25 @@ class ClientWorkout extends Component {
             type: '',
             providerId: '',
             clientId: '',
-            workoutVid: this.props.seedVid,
+            workoutVid: '',
             workoutReps: '',
             workoutFreq: ''
         }
     }
-    componentDidUpdate(){
+    componentDidMount(){
         console.log(this.props.prescription)
-        console.log('The exercise regimin is', this.props.exerciseRegimen)
+        console.log('The exercise regimin is', this.props.exerciseRegimen[0])
+        this.starterVid();
     }
 
     starterVid = (e) => {
         console.log("The modal button was clicked")
-        // this.setState({
-        //     workoutVid: this.props.seedVid
-        // })
-        // console.log('The starting workout vid is ', this.state.workoutVid)
+        if(this.props.seedVid){
+            this.setState({
+                workoutVid: this.props.exerciseRegimen[0]
+            })
+            console.log('The starting workout vid is ', this.state.workoutVid)
+        }     
     }
 
     handleVideo = (e) => {
@@ -64,7 +67,7 @@ class ClientWorkout extends Component {
               <Row>
                 <Col m={8}>
                   <div class="video-container">
-                  <iframe width="853" height="480" src={this.state.workoutVid} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></iframe>
+                  <iframe width="853" height="480" src={this.state.workoutVid} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1">Welcome!</iframe>
                   </div>
                 </Col>
                 <Col className="exercise-list-overflow" m={4}>

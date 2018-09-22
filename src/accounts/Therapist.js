@@ -24,6 +24,16 @@ class Therapist extends Component {
         this.findExerciseInfo();
     }
 
+    handleCommentInfo = (e) => {
+        console.log('Getting those comments')
+        axios.get(SERVER_URL + '/comments/' + this.state.clientId)
+        .then(results => {
+            console.log('The results from comments are ', results)
+        }).catch(err => {
+            console.log('We are having trouble fetching comments')
+        })
+    }
+
     findExerciseInfo = (e) => {
         //this.handleClientInfo()
         console.log('The state I send to the server is: ', this.state.clientId)
@@ -37,7 +47,7 @@ class Therapist extends Component {
             })
             console.log('The clientInfo is ', this.state.clientInfo)
             console.log('The assigned exercises are: ', this.state.exerciseInfo)
-            //this.getExercises()
+            this.handleCommentInfo();
         }).catch(err => {
             console.log('There was an error getting the client prescription info')
         })
