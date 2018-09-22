@@ -26,7 +26,6 @@ class FeedbackForm extends Component {
       console.log("On CDM of SignUp, user is:", this.props.user);
       console.log("This is the checkLogin value: ", this.props.checkedLogin)
       this.handleClientProvider();
-      //this.retrieveExercises();
   }  
 
   handleClientProvider = (e) => {
@@ -106,23 +105,6 @@ class FeedbackForm extends Component {
 //             errorMessage: 'All fields required'
 //         })
 //     }
-//   }
-
-//   handleNames = (e) => {
-//       console.log('Getting those clients for provider', this.props.user)
-//       if(this.props.user){
-//         axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
-//         .then( result => {
-//             console.log(result.data.clients)
-//                 this.setState({
-//                     clients: result.data.clients,
-//                     providerId: this.props.user.id
-//                 })
-//                 console.log(this.state.clients)
-//         }).catch(err => {
-//             console.log('THERE IS AN ERROR', err)
-//         })
-//       }
 //   }
 
   setRedirect = () => {
