@@ -14,25 +14,23 @@ class ClientWorkout extends Component {
             type: '',
             providerId: '',
             clientId: '',
-            workoutVid: '',
-            workoutReps: '',
+            workoutVid: '//www.youtube.com/embed/cIXIZ_8aGM8',
+            workoutReps: 'Click on your first exercise or watch this funny prancercise video! ',
             workoutFreq: ''
         }
     }
     componentDidMount(){
         console.log(this.props.prescription)
-        console.log('The exercise regimin is', this.props.exerciseRegimen[0])
         this.starterVid();
     }
 
     starterVid = (e) => {
         console.log("The modal button was clicked")
-        if(this.props.seedVid){
-            this.setState({
-                workoutVid: this.props.exerciseRegimen[0]
-            })
-            console.log('The starting workout vid is ', this.state.workoutVid)
-        }     
+        console.log("Exercise regimen is: ", this.props.seedVid)
+        // this.setState({
+        //     workoutVid: this.props.exerciseRegimen[0]
+        // })
+        // console.log('The starting workout vid is ', this.state.workoutVid)    
     }
 
     handleVideo = (e) => {
@@ -55,7 +53,7 @@ class ClientWorkout extends Component {
           <Col className="z-depth-1 offset-m3" m={6}>
             <h4 className="center">Your Current Regimen</h4>
             <hr />
-            <h5>The exercises will be listed here</h5>
+            <h5>To get started, click "Start Regimen"</h5>
             <Modal
               header="Today's Exercises"
               actions={<div>
