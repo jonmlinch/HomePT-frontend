@@ -9,7 +9,7 @@ function ExerciseInput(props) {
                 <option value={0}>Choose an exercise</option>
                 {props.exerciseData.map(exercises => <option value={exercises._id} key={exercises._id}>{exercises.name}</option>)}
                 </Input>
-                <Input s={3} label="Reps"  onChange={props.updateReps} />
+                <Input s={4} label="Reps"  onChange={props.updateReps} />
                 <Input s={4} label="Frequency"  onChange={props.updateFreq} />
                 
             </Row>

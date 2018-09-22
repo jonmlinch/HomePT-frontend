@@ -50,6 +50,11 @@
 }
 
 .therapist-client-info {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.therapist-client-feedback {
   height: 600px;
   overflow-y: auto;
 }
