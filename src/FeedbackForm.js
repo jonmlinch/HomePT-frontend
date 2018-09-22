@@ -77,35 +77,6 @@ class FeedbackForm extends Component {
     console.log('The NEW comments is: ', this.state.addlComments)
   }
 
-
-//   validateAndAppend = () => {
-//     if(this.state.prescribeExercise.exerciseId &&
-//         this.state.prescribeExercise.repInfo &&
-//         this.state.prescribeExercise.freqInfo){
-//         // Data is valid! Append it.
-//         const newPrescriptionData = this.state.prescriptionData;
-//         newPrescriptionData.push(this.state.prescribeExercise);
-//         console.log('old prescription:', this.state.prescriptionData);
-//         console.log('new prescriotion:', newPrescriptionData);
-//         this.setState({
-//             errorMessage: '',
-//             prescribeExercise: {
-//                 exerciseId: '',
-//                 repInfo: '',
-//                 freqInfo: ''
-//             },
-//             prescriptionData: newPrescriptionData,
-//             numExercise: this.state.numExercise + 1
-//         })
-//     }
-//     else {
-//         // At least one data field not entered
-//         this.setState({
-//             errorMessage: 'All fields required'
-//         })
-//     }
-//   }
-
   setRedirect = () => {
     this.setState({
         redirect: true
