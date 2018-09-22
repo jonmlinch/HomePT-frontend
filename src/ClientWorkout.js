@@ -13,15 +13,34 @@ class ClientWorkout extends Component {
         this.state = {
             type: '',
             providerId: '',
-            clientId: ''
+            clientId: '',
+            workoutVid: this.props.seedVid,
+            workoutReps: '',
+            workoutFreq: ''
         }
     }
-    componentDidMount(){
+    componentDidUpdate(){
         console.log(this.props.prescription)
+        console.log('The exercise regimin is', this.props.exerciseRegimen)
     }
 
-    getExercises = (e) => {
-        console.log('Now the state is: ', this.state)
+    starterVid = (e) => {
+        console.log("The modal button was clicked")
+        // this.setState({
+        //     workoutVid: this.props.seedVid
+        // })
+        // console.log('The starting workout vid is ', this.state.workoutVid)
+    }
+
+    handleVideo = (e) => {
+        e.preventDefault();
+        console.log('This is the button click', e.target.value)
+        console.log('The starting workout vid is ', this.state.workoutVid)
+        this.setState({
+            workoutVid: e.target.value,
+            workoutReps: e.target.name
+        })
+        console.log('the state of workoutVid is', this.state.workoutVid)
     }
 
 
@@ -44,27 +63,19 @@ class ClientWorkout extends Component {
               trigger={<Button className="blue lighten-1 right start-regimen-button">Start Regimen</Button>}>
               <Row>
                 <Col m={8}>
-                  <div className="video-container">
-                    <iframe title="video" width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameBorder="0" allowFullScreen="1"></iframe>
+                  <div class="video-container">
+                  <iframe width="853" height="480" src={this.state.workoutVid} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></iframe>
                   </div>
                 </Col>
                 <Col className="exercise-list-overflow" m={4}>
-                <Button className="exercise-button blue lighten-1 btn-small" waves='light'>EXERCISE ONE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE TWO</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE THREE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE FOUR</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE FIVE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE SIX</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE SEVEN</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE EIGHT</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE NINE</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE TEN</Button>
-                <Button className="exercise-button blue lighten-1" waves='light'>EXERCISE ELEVEN</Button>
+                {this.props.exerciseRegimen.map(exercises => (
+                    <Button onClick={this.handleVideo} className="exercise-button blue lighten-1 btn-small" waves='light' value={exercises.exercise.video} name={`Do it for ${exercises.reps}`}>{exercises.exercise.name}</Button>
+                ))}
                 </Col>
               </Row>
               <Row>
                 <Col m={12}>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <h1>{this.state.workoutReps}</h1>
               </Col>
               </Row>              
             </Modal>
