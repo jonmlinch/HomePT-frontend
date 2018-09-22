@@ -11,15 +11,11 @@ class FeedbackForm extends Component {
       super(props);
       this.state = {
           redirect: false,
-          clients: [],
-          numExercise: 1,
-          exerciseData: [],
-          prescriptionData: [],
-          prescribeExercise: {
-            exerciseId: '',
-            repInfo: '',
-            freqInfo: '',
-          },
+          RPEData: '5',
+          pain: '',
+          painLocation: '',
+          painSeverity: '5',
+          addlComments: '',
           providerId: '',
           clientId: '',
 
@@ -29,63 +25,86 @@ class FeedbackForm extends Component {
   componentDidMount() {
       console.log("On CDM of SignUp, user is:", this.props.user);
       console.log("This is the checkLogin value: ", this.props.checkedLogin)
-      //this.retrieveExercises();
+      this.handleClientProvider();
   }  
 
-
-  validateAndAppend = () => {
-    if(this.state.prescribeExercise.exerciseId &&
-        this.state.prescribeExercise.repInfo &&
-        this.state.prescribeExercise.freqInfo){
-        // Data is valid! Append it.
-        const newPrescriptionData = this.state.prescriptionData;
-        newPrescriptionData.push(this.state.prescribeExercise);
-        console.log('old prescription:', this.state.prescriptionData);
-        console.log('new prescriotion:', newPrescriptionData);
+  handleClientProvider = (e) => {
+      if(this.props.user){
         this.setState({
-            errorMessage: '',
-            prescribeExercise: {
-                exerciseId: '',
-                repInfo: '',
-                freqInfo: ''
-            },
-            prescriptionData: newPrescriptionData,
-            numExercise: this.state.numExercise + 1
+            clientId: this.props.user.id,
+            providerId: this.props.user.provider
         })
-    }
-    else {
-        // At least one data field not entered
-        this.setState({
-            errorMessage: 'All fields required'
-        })
-    }
+        console.log('The user info is: ', this.state)
+      }
   }
 
-//   handleNames = (e) => {
-//       console.log('Getting those clients for provider', this.props.user)
-//       if(this.props.user){
-//         axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
-//         .then( result => {
-//             console.log(result.data.clients)
-//                 this.setState({
-//                     clients: result.data.clients,
-//                     providerId: this.props.user.id
-//                 })
-//                 console.log(this.state.clients)
-//         }).catch(err => {
-//             console.log('THERE IS AN ERROR', err)
-//         })
-//       }
-//   }
+  handleRPE = (e) => {
+      console.log("The old RPE is: ", this.state.RPEData);
+      this.setState({
+          RPEData: e.target.value
+      })
+      console.log("The NEW RPE is: ", this.state.RPEData)
+  }
 
-//   handleClientId = (e) => {
-//       e.preventDefault();
-//       console.log("The current client ID is: ", this.state.clientId)
-//       this.setState({
-//           clientId: e.target.value
-//       })
-//       console.log("The new client ID is: ", this.state.clientId)
-//       console.log("This is the Provider ID: ", this.state.providerId)
+  handlePain = (e) => {
+      console.log('The old pain value is: ', this.state.pain)
+      this.setState({
+          pain: e.target.value
+      })
+      console.log('The NEW pain value is: ', this.state.pain)
+  }
+
+  handlePainLocation = (e) => {
+    console.log('The old pain location is: ', this.state.painLocation)
+    this.setState({
+        painLocation: e.target.value
+    })
+    console.log('The NEW pain location is: ', this.state.painLocation)
+  }
+
+  handlePainSeverity = (e) => {
+    console.log('The old pain severity is: ', this.state.painSeverity)
+    this.setState({
+        painSeverity: e.target.value
+    })
+    console.log('The NEW pain severity is: ', this.state.painSeverity)
+  }
+
+  handleAddlComments = (e) => {
+    console.log('The old comments is: ', this.state.addlComments)
+    this.setState({
+        addlComments: e.target.value
+    })
+    console.log('The NEW comments is: ', this.state.addlComments)
+  }
+
+
+//   validateAndAppend = () => {
+//     if(this.state.prescribeExercise.exerciseId &&
+//         this.state.prescribeExercise.repInfo &&
+//         this.state.prescribeExercise.freqInfo){
+//         // Data is valid! Append it.
+//         const newPrescriptionData = this.state.prescriptionData;
+//         newPrescriptionData.push(this.state.prescribeExercise);
+//         console.log('old prescription:', this.state.prescriptionData);
+//         console.log('new prescriotion:', newPrescriptionData);
+//         this.setState({
+//             errorMessage: '',
+//             prescribeExercise: {
+//                 exerciseId: '',
+//                 repInfo: '',
+//                 freqInfo: ''
+//             },
+//             prescriptionData: newPrescriptionData,
+//             numExercise: this.state.numExercise + 1
+//         })
+//     }
+//     else {
+//         // At least one data field not entered
+//         this.setState({
+//             errorMessage: 'All fields required'
+//         })
+//     }
 //   }
 
   setRedirect = () => {
@@ -94,31 +113,15 @@ class FeedbackForm extends Component {
     })
   }
 
-//   retrieveExercises = () => {
-//     console.log('GETTING THOSE EXERCISES');
-//     axios.get(SERVER_URL + '/exercises')
-//     .then( result => {
-//         console.log(result.data.exercises)
-//         this.setState({
-//             exerciseData: result.data.exercises
-//         })
-//         console.log('this is the new exercise state: ', this.state.exerciseData)
-//     }).catch( err => {
-//         console.log('Trouble getting exercises!')
-//     })
-//   }
-
   handleSubmit = (e) => {
       e.preventDefault();
-      console.log('The exercise object is: ', this.state.prescriptionData);
-      console.log('The state I am sending is: ', this.state);
-    //   this.validateAndAppend()
-    //   axios.post(SERVER_URL + '/prescriptions', this.state)
-    //   .then(result => {
-    //       this.setRedirect();
-    //   }).catch(err => {
-    //       console.log('The error from sending presciption is: ', err);
-    //   })
+      console.log('The state I am sending to comments is: ', this.state);
+      axios.post(SERVER_URL + '/comments', this.state)
+      .then(result => {
+          this.setRedirect();
+      }).catch(err => {
+          console.log('The error from sending presciption is: ', err);
+      })
   };
   
   render() {
@@ -133,35 +136,35 @@ class FeedbackForm extends Component {
                             <label className="flow-text">Did you have any pain today?</label>
                             <Row>
                               <Col s={4} className="offset-s5">
-                                <Input className="left" name='group1' type='checkbox' value='Yes' label='Yes' />
-                                <Input className="right" name='group1' type='checkbox' value='No' label='No' />
-                              </Col>
+                                <Input className="left" name='group1' type='checkbox' value='Yes' label='Yes' onChange={this.handlePain} />
+                                <Input className="right" name='group1' type='checkbox' value='No' label='No' onChange={this.handlePain} />
+                              </Col>            
                             </Row>
                         </div>
                         <div>
                             <label className="flow-text">If so, where was it?</label>
                             <Row>
                               <Col s={12}>
-                                <Input type='text' placeholder="Please describe location of pain" />
+                                <Input type='text' placeholder="Please describe location of pain" onChange={this.handlePainLocation} />
                               </Col>
                             </Row>
                         </div>
                         <div>
                             <label className="flow-text">On a scale of 1 to 10, how would you rate your pain?</label>
                             <Row>
-                                <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
+                                <Input s={12} name="name" type='range' min="0" max="10" defaultValue="5" onChange={this.handlePainSeverity}></Input>
                             </Row>
                         </div>
                         <div>
                             <label className="flow-text">On a scale of 1 to 10, how hard was this workout?</label>
                             <Row>
-                                <Input s={12} name="name" type='range' min="0" max="10" onChange={this.handleClientId}></Input>
+                                <Input s={12} name="name" type='range' min="0" max="10" defaultValue="5" onChange={this.handleRPE}></Input>
                             </Row>
                         </div>
                         <div>
                             <label className="flow-text">Are there any other comments you would like to share with your physical therapist?</label>
                             <Row>
-                                <Input s={12} name="name" type='textarea' min="0" max="10" onChange={this.handleClientId}></Input>
+                                <Input s={12} name="name" type='textarea' min="0" max="10" onChange={this.handleAddlComments}></Input>
                             </Row>
                         </div>
                         <br></br>

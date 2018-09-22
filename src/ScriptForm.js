@@ -35,7 +35,6 @@ class ScriptForm extends Component {
 
   handleExerciseName = (e) =>{
       e.preventDefault();
-      console.log('The value being entered for exerciseId is: ', e.target.value)
       this.setState({
         prescribeExercise: {
             exerciseId: e.target.value,
@@ -43,7 +42,6 @@ class ScriptForm extends Component {
             freqInfo: this.state.prescribeExercise.freqInfo,
         }
       })
-      console.log('THIS IS THE PRESCRIBED EXERCISE: ', this.state.prescribeExercise)
   }
 
   handleRepInfo = (e) =>{
@@ -55,7 +53,6 @@ class ScriptForm extends Component {
           freqInfo: this.state.prescribeExercise.freqInfo,
       }
     })
-    console.log('THIS IS THE PRESCRIBED EXERCISE: ', this.state.prescribeExercise)
   }
 
   handleFreqInfo = (e) =>{
@@ -67,7 +64,6 @@ class ScriptForm extends Component {
         freqInfo: e.target.value,
       }
     })
-    console.log('THIS IS THE PRESCRIBED EXERCISE: ', this.state.prescribeExercise)
   }
 
   validateAndAppend = () => {
@@ -77,8 +73,6 @@ class ScriptForm extends Component {
         // Data is valid! Append it.
         const newPrescriptionData = this.state.prescriptionData;
         newPrescriptionData.push(this.state.prescribeExercise);
-        console.log('old prescription:', this.state.prescriptionData);
-        console.log('new prescriotion:', newPrescriptionData);
         this.setState({
             errorMessage: '',
             prescribeExercise: {
@@ -99,16 +93,13 @@ class ScriptForm extends Component {
   }
 
   handleNames = (e) => {
-      console.log('Getting those clients for provider', this.props.user)
       if(this.props.user){
         axios.get(SERVER_URL + '/users/clients/' + this.props.user.id)
         .then( result => {
-            console.log(result.data.clients)
-                this.setState({
-                    clients: result.data.clients,
-                    providerId: this.props.user.id
-                })
-                console.log(this.state.clients)
+            this.setState({
+                clients: result.data.clients,
+                providerId: this.props.user.id
+            })
         }).catch(err => {
             console.log('THERE IS AN ERROR', err)
         })
@@ -117,12 +108,9 @@ class ScriptForm extends Component {
 
   handleClientId = (e) => {
       e.preventDefault();
-      console.log("The current client ID is: ", this.state.clientId)
       this.setState({
           clientId: e.target.value
       })
-      console.log("The new client ID is: ", this.state.clientId)
-      console.log("This is the Provider ID: ", this.state.providerId)
   }
 
   setRedirect = () => {
@@ -136,14 +124,12 @@ class ScriptForm extends Component {
   }
 
   retrieveExercises = () => {
-    console.log('GETTING THOSE EXERCISES');
     axios.get(SERVER_URL + '/exercises')
     .then( result => {
         console.log(result.data.exercises)
         this.setState({
             exerciseData: result.data.exercises
         })
-        console.log('this is the new exercise state: ', this.state.exerciseData)
     }).catch( err => {
         console.log('Trouble getting exercises!')
     })
@@ -151,8 +137,6 @@ class ScriptForm extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      console.log('The exercise object is: ', this.state.prescriptionData);
-      console.log('The state I am sending is: ', this.state);
       this.validateAndAppend()
       axios.post(SERVER_URL + '/prescriptions', this.state)
       .then(result => {
