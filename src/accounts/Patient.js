@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Row, Col, Modal } from 'react-materialize';
-import {Link} from 'react-router-dom';
 import ClientWorkout from '../ClientWorkout';
+import SERVER_URL from '../constants/server';
+import axios from 'axios';
+
 
 
 
