@@ -13,6 +13,7 @@ class Therapist extends Component {
             prescribedExercises: [],
             clientInfo: '',
             exerciseInfo: [],
+            commentInfo: []
         }
     }
 
@@ -25,10 +26,12 @@ class Therapist extends Component {
     }
 
     handleCommentInfo = (e) => {
-        console.log('Getting those comments')
         axios.get(SERVER_URL + '/comments/' + this.state.clientId)
         .then(results => {
-            console.log('The results from comments are ', results)
+            this.setState({
+                commentInfo: results.data.comments
+            })
+            console.log('This is the new state of comments ', this.state.commentInfo)
         }).catch(err => {
             console.log('We are having trouble fetching comments')
         })
@@ -57,7 +60,7 @@ class Therapist extends Component {
     
       return (
         <div className="container">
-            <h2>Provider's dashboard</h2>
+            <h2>{this.props.user.name}'s dashboard</h2>
             <Row>
             <Col m={4} s={12}>
               <Row>
@@ -93,21 +96,25 @@ class Therapist extends Component {
              <Col className="therapist-client-feedback offset-m1 z-depth-1" m={7} s={12}>
                  <h2 className="center">Client Info</h2>
                  <hr/>
-                 <h3 className="center therapist-client-name">{this.state.clientInfo.name}</h3>
-                 <h3 className="center">Prescribed Exercises</h3> 
-                 {this.state.exerciseInfo.map(exercises => (
+                 <h3 className="center therapist-client-name">Feedback</h3>
+                 <h5 className="center">Patient's Name: {this.state.clientInfo.name}</h5> 
+                 {this.state.commentInfo.map(comments => (
                  <div>
-                   <Row>
-                     <Col className="flow-text" s={4}>
-                       <p>Exercise: {exercises.exercise.name}</p>
-                     </Col>
-                     <Col className="flow-text" s={4}>
-                       <p>Reps: {exercises.reps}</p>
-                     </Col>
-                     <Col className="flow-text" s={4}>
-                       <p>Frequency: {exercises.freq}</p>
-                     </Col>
-                   </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Pain?: {comments.feedback.pain}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Pain Location: {comments.feedback.painLocation}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Pain Severity: {comments.feedback.painSeverity}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>RPE: {comments.feedback.RPEData}</p>
+                     </Row>
+                     <Row className="flow-text" s={2}>
+                       <p>Additional Comments: {comments.feedback.addlComments}</p>
+                     </Row>
                  </div>
                  ))}               
               </Col>            

@@ -45,7 +45,7 @@ class Profile extends Component {
         )
           } else {
                 return (
-                    <Therapist clients={this.state.clients}/>
+                    <Therapist clients={this.state.clients} user={this.props.user}/>
                 )
             }
     } else if(this.props.checkedLogin) {
