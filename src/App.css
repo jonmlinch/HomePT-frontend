@@ -104,6 +104,10 @@ body {
   color: white; 
 }
 
+.test {
+  margin-bottom: 320px;
+}
+
 @media only screen and (max-width: 600px) {
   .parallax img {
     max-width: 200%;
