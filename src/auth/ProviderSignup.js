@@ -64,7 +64,7 @@ class Signup extends Component {
     } else {
         return (
             <div className="container signup-form-container center z-depth-1">
-                <h2>Register As A New Provider</h2>
+                <h2>Register as a new provider</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <div>
                         <Input name="name" label="Full Name" value={this.state.name} onChange={this.handleNameChange} />
@@ -73,7 +73,7 @@ class Signup extends Component {
                         <Input name="email" label="E-Mail" value={this.state.email} onChange={this.handleEmailChange} />
                     </div>
                     <div>
-                        <Input name="password" label="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                        <Input name="password" label="Password" type="password" placeholder="Password must be at least 6 characters long." value={this.state.password} onChange={this.handlePasswordChange} />
                     </div>
                     <div>
                         <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>
