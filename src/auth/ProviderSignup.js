@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
 import { Button, Input } from 'react-materialize';
+import { setCookie } from '../helpers/helpers';
 
 
 
@@ -44,19 +45,21 @@ class Signup extends Component {
   };
 
   handleSubmit = (e) => {
-      e.preventDefault();
-      const toSubmit = this.state
-      console.log(this.state);
-      axios.post(SERVER_URL + '/auth/signup', toSubmit)
-      .then(result => {
-          this.setRedirect();
-      }).catch( err => {
-          console.log('ERROR', err.response);
-      });
-  };
+    e.preventDefault();
+    console.log(this.state);
+    axios.post(SERVER_URL + '/auth/signup', this.state)
+    .then(result => {
+        //Add the newly received token to cookie
+        setCookie('mernToken', result.data.token);
+        //Update the user with a call to App.js
+        this.props.updateUser();
+    }).catch( err => {
+        console.log('ERROR', err);
+    });
+};
   
   render() {
-    if(this.state.redirect){
+    if(this.props.user){
         return (
             <Redirect to="/profile" />
         )   

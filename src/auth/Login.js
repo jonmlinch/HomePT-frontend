@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
-import { setCookie } from '../helpers/helpers'
+import { setCookie } from '../helpers/helpers';
 import { Button, Input } from 'react-materialize';
 
 
@@ -32,7 +32,6 @@ class Login extends Component {
       console.log(this.state);
       axios.post(SERVER_URL + '/auth/login', this.state)
       .then(result => {
-          console.log('THIS BITCH IS:', result);
           //Add the newly received token to cookie
           setCookie('mernToken', result.data.token);
           //Update the user with a call to App.js

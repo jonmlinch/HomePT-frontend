@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
-import FeedbackForm from '../FeedbackForm';
 import ClientWorkout from '../ClientWorkout'
 
 

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import SERVER_URL from './constants/server';
 import { Button, Row, Col, Modal } from 'react-materialize';
-import FeedbackForm from './FeedbackForm';
 import {Link} from 'react-router-dom';
 
 
@@ -26,11 +23,7 @@ class ClientWorkout extends Component {
 
     starterVid = (e) => {
         console.log("The modal button was clicked")
-        console.log("Exercise regimen is: ", this.props.seedVid)
-        // this.setState({
-        //     workoutVid: this.props.exerciseRegimen[0]
-        // })
-        // console.log('The starting workout vid is ', this.state.workoutVid)    
+        console.log("Exercise regimen is: ", this.props.seedVid)    
     }
 
     handleVideo = (e) => {
