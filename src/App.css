@@ -67,6 +67,10 @@ body {
   margin-bottom: 50px;
 }
 
+.feedback-container {
+  margin-left: 25px;
+}
+
 .client-profile {
   height: 700px;
   margin-top: 25px;
