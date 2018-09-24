@@ -11,8 +11,12 @@ class Therapist extends Component {
         this.state = {
             clientId: '',
             prescribedExercises: [],
-            clientInfo: '',
-            exerciseInfo: [],
+            clientInfo: { name: '---' },
+          exerciseInfo: [{
+            exercise: { name: '---' },
+            reps: '---',
+            freq: '---'
+          }],
             commentInfo: []
         }
     }
@@ -42,16 +46,31 @@ class Therapist extends Component {
         console.log('The state I send to the server is: ', this.state.clientId)
         axios.get(SERVER_URL + '/users/prescription/' + this.state.clientId)
         .then(results => {
+          const newClientInfo = results.data.result;
+          // if client has an active prescription
+          if (newClientInfo.prescription) {
             console.log('The result of the GET is: ', results.data.result)
-            const newClientInfo = results.data.result;
             this.setState({
-                clientInfo: newClientInfo,
-                exerciseInfo: newClientInfo.prescription.assignedExercises,
+              clientInfo: newClientInfo,
+              exerciseInfo: newClientInfo.prescription.assignedExercises,
             })
             console.log('The clientInfo is ', this.state.clientInfo)
             console.log('The assigned exercises are: ', this.state.exerciseInfo)
             this.handleCommentInfo();
+          }
+          // else fill values with empty values to display to provider
+          else {
+            this.setState({
+              clientInfo: newClientInfo,
+              exerciseInfo: [{
+                exercise: { name: '---' },
+                reps: '---',
+                freq: '---'
+              }],
+            })
+          }
         }).catch(err => {
+          console.log(err);
             console.log('There was an error getting the client prescription info')
         })
     }
@@ -66,7 +85,7 @@ class Therapist extends Component {
               <Row>
               <Col className="center z-depth-1" m={12} s={12}>
                   <h3 className="flow-text">List of clients</h3>
-                  <Input s={12} textclassName="white-text" type='select' label="Clients"  onChange={this.handleClientInfo} defaultValue='1'>
+                  <Input s={12} type='select' label="Clients" onChange={this.handleClientInfo} defaultValue='1'>
                       <option value={0}>Choose a patient</option>
                       {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
                   </Input>
