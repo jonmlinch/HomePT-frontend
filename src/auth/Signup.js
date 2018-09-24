@@ -73,7 +73,7 @@ class Signup extends Component {
                         <Input name="email" label="E-Mail" value={this.state.email} onChange={this.handleEmailChange} />
                     </div>
                     <div>
-                        <Input name="password" label="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                        <Input name="password" label="Password" type="password" placeholder="Password must be at least 6 characters long." value={this.state.password} onChange={this.handlePasswordChange} />
                     </div>
                     <div>
                         <Button className="blue darken-1" type="submit" value="Register" waves='light'>Submit</Button>

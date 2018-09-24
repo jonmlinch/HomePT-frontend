@@ -37,7 +37,7 @@ class Nav extends Component {
           <div>
             <span>
                 <li><Link to="/login">Login</Link></li>
-                <li>Provider? <Link to="/providersignup">Register Here!</Link></li> 
+                <li><Link to="/providersignup">Provider? Register Here!</Link></li> 
             </span>
           </div>
         );
