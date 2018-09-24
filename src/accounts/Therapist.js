@@ -85,7 +85,7 @@ class Therapist extends Component {
               <Row>
               <Col className="center z-depth-1" m={12} s={12}>
                   <h3 className="flow-text">List of clients</h3>
-                  <Input s={12} textclassName="white-text" type='select' label="Clients"  onChange={this.handleClientInfo} defaultValue='1'>
+                  <Input s={12} type='select' label="Clients" onChange={this.handleClientInfo} defaultValue='1'>
                       <option value={0}>Choose a patient</option>
                       {this.props.clients.map(client => <option value={client.id}>{client.name}</option>)}
                   </Input>
