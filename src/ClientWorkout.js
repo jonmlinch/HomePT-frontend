@@ -43,7 +43,7 @@ class ClientWorkout extends Component {
       <div>
         <h2 className="center" onChange={this.starterVid}>{this.props.prescription.name}'s Dashboard</h2>
         <Row>
-          <Col className="test z-depth-1 offset-m3" m={6}>
+          <Col className="client-dashboard-padding z-depth-1 offset-m3" m={6}>
             <h4 className="center">Your Current Regimen</h4>
             <hr />
             <h5>To get started, click "Start Regimen"</h5>

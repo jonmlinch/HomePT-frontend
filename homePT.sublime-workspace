@@ -1,0 +1,1525 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"top",
+				"margin-top\tproperty"
+			],
+			[
+				"in",
+				"inline-block\tdisplay"
+			],
+			[
+				"marg",
+				"margin-right\tproperty"
+			],
+			[
+				"padding",
+				"padding-right\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"border",
+				"border-bottom-width\tproperty"
+			],
+			[
+				"bottom",
+				"padding-bottom\tproperty"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"over",
+				"overflow-y\tproperty"
+			],
+			[
+				"cas",
+				"className"
+			],
+			[
+				"overflo",
+				"overflow-y\tproperty"
+			],
+			[
+				"cal",
+				"className"
+			],
+			[
+				"im",
+				"background-image\tproperty"
+			],
+			[
+				"therap",
+				"therapists"
+			],
+			[
+				"ther",
+				"Therapist"
+			],
+			[
+				"font-a",
+				"font-size-adjust\tproperty"
+			],
+			[
+				"padd",
+				"padding\tproperty"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"pad",
+				"padding-bottom\tproperty"
+			],
+			[
+				"min",
+				"min-width\tproperty"
+			],
+			[
+				"c",
+				"cover\tobject-fit"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"background",
+				"background-color\tproperty"
+			],
+			[
+				"nav",
+				"NavItem"
+			],
+			[
+				"marin",
+				"margin-left\tproperty"
+			],
+			[
+				"label",
+				"labeltext"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"backroun",
+				"background-repeat\tproperty"
+			],
+			[
+				"image",
+				"shape-image-threshold\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"borde",
+				"border-bottom\tproperty"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"flex",
+				"flex-shrink\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"hei",
+				"height\tproperty"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"op",
+				"option\tTag"
+			],
+			[
+				"margi",
+				"margin-bottom\tproperty"
+			],
+			[
+				"publisher",
+				"publisherSchema"
+			],
+			[
+				"log",
+				"loggedIn"
+			],
+			[
+				"creat",
+				"createdJournal"
+			],
+			[
+				"shad",
+				"box-shadow\tproperty"
+			],
+			[
+				"font-",
+				"font-size\tproperty"
+			],
+			[
+				"backgr",
+				"background-image\tproperty"
+			],
+			[
+				"objec",
+				"object-fit\tproperty"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"max-",
+				"max-width\tproperty"
+			],
+			[
+				"too",
+				"toolbarOptions"
+			],
+			[
+				"login",
+				"login-form"
+			],
+			[
+				"backg",
+				"background-size\tproperty"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"da",
+				"DATE"
+			],
+			[
+				"side",
+				"sideToShowDisplay"
+			],
+			[
+				"tm",
+				"templateData"
+			],
+			[
+				"cook",
+				"cookieParser"
+			],
+			[
+				"body",
+				"bodyParser"
+			],
+			[
+				"created",
+				"createdBook"
+			],
+			[
+				"req",
+				"req"
+			],
+			[
+				"ejs",
+				"ejsLayouts"
+			],
+			[
+				"for",
+				"for\tAttr"
+			],
+			[
+				"form-",
+				"form-group"
+			],
+			[
+				"fo",
+				"for\tAttr"
+			],
+			[
+				"team",
+				"teamUrl"
+			],
+			[
+				"expre",
+				"expressEjsLayouts"
+			],
+			[
+				"exp",
+				"expressEjsLAyouts"
+			],
+			[
+				"pokem",
+				"pokemonbattle"
+			],
+			[
+				"battle",
+				"battlesfx"
+			],
+			[
+				"set",
+				"setInterval"
+			],
+			[
+				"time",
+				"setTimeout"
+			],
+			[
+				"animation",
+				"animation-iteration-count\tproperty"
+			],
+			[
+				"anim",
+				"animation-duration\tproperty"
+			],
+			[
+				"trans",
+				"transition\tproperty"
+			],
+			[
+				"enemy",
+				"enemyParty"
+			],
+			[
+				"player",
+				"playerParty"
+			],
+			[
+				"transfor",
+				"transform-origin\tproperty"
+			],
+			[
+				"scale",
+				"scaleX()\ttransform"
+			],
+			[
+				"scal",
+				"scaleX()\ttransform"
+			],
+			[
+				"overfl",
+				"overflow\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"pkmnback",
+				"pkmnback"
+			],
+			[
+				"at",
+				"attack2"
+			],
+			[
+				"fight",
+				"fightButton"
+			],
+			[
+				"ad",
+				"addListeners"
+			],
+			[
+				"bor",
+				"border-right\tproperty"
+			],
+			[
+				"u",
+				"url()\tcontent"
+			],
+			[
+				"con",
+				"content\tproperty"
+			],
+			[
+				"pkmn",
+				"pkmncursor"
+			],
+			[
+				"img",
+				"border-image\tproperty"
+			],
+			[
+				"ene",
+				"enemyParty"
+			],
+			[
+				"pla",
+				"playerParty"
+			],
+			[
+				"imag",
+				"image-rendering\tproperty"
+			],
+			[
+				"enem",
+				"enemyAttack"
+			],
+			[
+				"sti",
+				"static\tposition"
+			],
+			[
+				"st",
+				"sticky\tposition"
+			],
+			[
+				"backgroud",
+				"background-image\tproperty"
+			],
+			[
+				"ar",
+				"arcade"
+			],
+			[
+				"missil",
+				"missilesfx"
+			],
+			[
+				"wea",
+				"WEAPONS"
+			],
+			[
+				"we",
+				"WEAPONS"
+			],
+			[
+				"cu",
+				"currentWeapon"
+			],
+			[
+				"laser",
+				"lasersfx"
+			],
+			[
+				"las",
+				"lasers"
+			],
+			[
+				"p",
+				"physics"
+			],
+			[
+				"GAME",
+				"GAME_HEIGHT"
+			],
+			[
+				"inner",
+				"innerHTML"
+			],
+			[
+				"correc",
+				"correctAnswerIndex"
+			],
+			[
+				"curren",
+				"currentIndex"
+			],
+			[
+				"ans",
+				"answerSubmitted"
+			],
+			[
+				"quiz",
+				"quiz-answers"
+			],
+			[
+				"mari",
+				"margin\tproperty"
+			],
+			[
+				"qui",
+				"quiz-sentence"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"d",
+				"dropdown"
+			],
+			[
+				"curre",
+				"currentIndex"
+			],
+			[
+				"cur",
+				"currentIndex"
+			],
+			[
+				"pic",
+				"picArray"
+			],
+			[
+				"sw",
+				"switchPic"
+			],
+			[
+				"sear",
+				"searchTerm"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"bloc",
+				"inline-block\tdisplay"
+			],
+			[
+				"list-st",
+				"list-style-position\tproperty"
+			],
+			[
+				"tran",
+				"translateY()\ttransform"
+			],
+			[
+				"pos",
+				"position\tproperty"
+			],
+			[
+				"align",
+				"align-items\tproperty"
+			],
+			[
+				"conte",
+				"align-content\tproperty"
+			],
+			[
+				"bo",
+				"board"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/accounts/Therapist.js",
+			"settings":
+			{
+				"buffer_size": 5380,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ScriptForm.js",
+			"settings":
+			{
+				"buffer_size": 5999,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/accounts/Patient.js",
+			"settings":
+			{
+				"buffer_size": 1643,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ClientWorkout.js",
+			"settings":
+			{
+				"buffer_size": 3377,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 2281,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ExerciseInput.js",
+			"settings":
+			{
+				"buffer_size": 714,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/FeedbackForm.js",
+			"settings":
+			{
+				"buffer_size": 5438,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/auth/Login.js",
+			"settings":
+			{
+				"buffer_size": 1948,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/helpers/helpers.js",
+			"settings":
+			{
+				"buffer_size": 897,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/auth/Signup.js",
+			"settings":
+			{
+				"buffer_size": 2424,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/auth/ProviderSignup.js",
+			"settings":
+			{
+				"buffer_size": 2388,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/constants/server.js",
+			"settings":
+			{
+				"buffer_size": 97,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Profile.js",
+			"settings":
+			{
+				"buffer_size": 1559,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Home.js",
+			"settings":
+			{
+				"buffer_size": 1603,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.js",
+			"settings":
+			{
+				"buffer_size": 3358,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/layout/Nav.js",
+			"settings":
+			{
+				"buffer_size": 1606,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.css",
+			"settings":
+			{
+				"buffer_size": 1613,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"ejs",
+				"Set Syntax: EJS (<% %>)"
+			],
+			[
+				"ej",
+				"Set Syntax: JavaScript - EJS"
+			],
+			[
+				"esj",
+				"Set Syntax: EJS (<% %>)"
+			],
+			[
+				"Package Contr",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/public",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/accounts",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/auth",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/constants",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/helpers",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/layout"
+	],
+	"file_history":
+	[
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/layout/Foot.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/ExerciseInput.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/ScriptForm.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/public/index.html",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/App.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/accounts/Therapist.js",
+		"/home/justinrashall/GA-WDI/Projects/backend-pt/models/index.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/layout/Nav.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/auth/Login.js",
+		"/home/justinrashall/GA-WDI/Projects/backend-pt/controllers/Users.js",
+		"/home/justinrashall/GA-WDI/Projects/backend-pt/index.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/Calendar.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/CalendarCSS.css",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/Home.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/auth/Signup.js",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/index.css",
+		"/home/justinrashall/GA-WDI/Projects/frontend-pt/src/accounts/Patient.js",
+		"/home/justinrashall/GA-WDI/Projects/Ill-Pick-Front/ill-pick-react/public/index.html",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/views/museums/new.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/views/museums/index.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/controllers/museums.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/views/error.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/index.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/models/museum.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/views/museums/show.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/public/style.css",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/models/index.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/models/piece.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/views/layout.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/mongoose-practice/views/partials/navbar.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/react-films/src/TMDB.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/public/stylesheets/style.css",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/public/public.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/partials/navbar.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/journal/show.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/journal/journal.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/controllers/public.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/controllers/journal.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/public/ajax-calls.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/profile/edit.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/journal/edit.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/journal/new.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/layout.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/public/app.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/journal/edit.ejs\nedit.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/journal/newBACKUP.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/auth/signup.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/profile/index.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/controllers/auth.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/controllers/profile.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/auth/login.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/partials/alerts.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/index.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/.env",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/config/config.json",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/notes.txt",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/README.md",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/controllers/dashboard.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/views/dashboard/dashboard.ejs",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/middleware/loggedIn.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/migrations/20180830171651-add-image-to-journals.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/models/journal.js",
+		"/home/justinrashall/GA-WDI/Code_Alongs/auth-tutorial/migrations/20180827152921-addfb.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/config/passportConfig.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/models/index.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/migrations/20180823180215-create-user.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/migrations/20180829175732-create-journal.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/models/user.js",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/notes2.txt",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/package.json",
+		"/home/justinrashall/GA-WDI/Projects/Inkwell-Journal/readme.md",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/routes/cards.js",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/app.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/html/hello.html",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/html/error.html",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/card.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/index.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/layout.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/includes/header.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/error.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/index.js",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/routes/index.js",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/data/flashcardData.json",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/includes/footer.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/hello.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/node_modules/express/lib/express.js",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/hello,pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/views/test.pug",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/html.html",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/package.json",
+		"/home/justinrashall/GA-WDI/Treehouse_Education/flashcards/app.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex-sass/index.js",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex-sass/public/css/style.css",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex-sass/public/css/sass/style.scss",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex-sass/views/layout.ejs",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex-sass/package.json",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex/package.json",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex/public/css/sass/style.scss",
+		"/home/justinrashall/GA-WDI/Labs_and_Homework/express-pokedex/public/css/style.css",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/index.js",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/models/index.js",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/routes/pokemon.js",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/index.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/pokemon/favorites.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/pokemon/show.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/layout.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/show.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/favorites.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/views/pokemon/index.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/db-test.js",
+		"/home/justin/GA-WDI/Labs_and_Homework/express-pokedex/config/config.json",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/index.js",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/controllers/books.js",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/sequelize-notes.txt",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/setup index.js.txt",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/views/layout.ejs",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/views/home.ejs",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/views/books/index.ejs",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/views/books/new.ejs",
+		"/home/justin/GA-WDI/Code_Alongs/sequelize-library/config/config.json",
+		"/home/justin/GA-WDI/Code_Alongs/express-geocode-maps-example/index.js",
+		"/home/justin/GA-WDI/Code_Alongs/express-geocode-maps-example/public/js/script.js",
+		"/home/justin/GA-WDI/Code_Alongs/express-geocode-maps-example/public/css/style.css",
+		"/home/justin/GA-WDI/Code_Alongs/express-geocode-maps-example/views/layout.ejs",
+		"/home/justin/GA-WDI/Code_Alongs/express-geocode-maps-example/views/index.ejs",
+		"/home/justin/GA-WDI/Labs_and_Homework/hackathon-teams/index.js",
+		"/home/justin/GA-WDI/Labs_and_Homework/hackathon-teams/public/js/teams-ajax.js",
+		"/home/justin/GA-WDI/Labs_and_Homework/hackathon-teams/models/data.json"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"h5",
+			"redir",
+			"nav"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"h4"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/accounts/Therapist.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3174,
+								3174
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 989.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/ScriptForm.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5999,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2448.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/accounts/Patient.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1643,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/ClientWorkout.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1662,
+								1662
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1391,
+								1391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/ExerciseInput.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 714,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								499,
+								499
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/FeedbackForm.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1479.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/auth/Login.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1948,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								223,
+								223
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/helpers/helpers.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 897,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								587,
+								587
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/auth/Signup.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2067,
+								2067
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 84.0,
+						"translation.y": 867.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/auth/ProviderSignup.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2352,
+								2352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 867.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/constants/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 97,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								43
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/Profile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/Home.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								181
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/layout/Nav.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								776,
+								776
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 16,
+					"file": "src/App.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1094,
+								1094
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1122.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.715537383178,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "homePT.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 208.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

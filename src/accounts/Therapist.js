@@ -118,7 +118,7 @@ class Therapist extends Component {
                  <h3 className="center therapist-client-name">Feedback</h3>
                  <h5 className="center">Patient's Name: {this.state.clientInfo.name}</h5> 
                  {this.state.commentInfo.map(comments => (
-                 <div>
+                 <div className="feedback-container">
                      <Row className="flow-text" s={2}>
                        <p>Pain?: {comments.feedback.pain}</p>
                      </Row>
