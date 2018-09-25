@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../constants/server';
-import FeedbackForm from '../FeedbackForm';
-import {Link} from 'react-router-dom';
 import ClientWorkout from '../ClientWorkout'
 
 

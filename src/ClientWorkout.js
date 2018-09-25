@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import SERVER_URL from './constants/server';
-import { Button, Card, Row, Col, Input, Modal, MediaBox } from 'react-materialize';
-import FeedbackForm from './FeedbackForm';
+import { Button, Row, Col, Modal } from 'react-materialize';
 import {Link} from 'react-router-dom';
 
 
@@ -26,11 +23,7 @@ class ClientWorkout extends Component {
 
     starterVid = (e) => {
         console.log("The modal button was clicked")
-        console.log("Exercise regimen is: ", this.props.seedVid)
-        // this.setState({
-        //     workoutVid: this.props.exerciseRegimen[0]
-        // })
-        // console.log('The starting workout vid is ', this.state.workoutVid)    
+        console.log("Exercise regimen is: ", this.props.seedVid)    
     }
 
     handleVideo = (e) => {
@@ -50,7 +43,7 @@ class ClientWorkout extends Component {
       <div>
         <h2 className="center" onChange={this.starterVid}>{this.props.prescription.name}'s Dashboard</h2>
         <Row>
-          <Col className="z-depth-1 offset-m3" m={6}>
+          <Col className="test z-depth-1 offset-m3" m={6}>
             <h4 className="center">Your Current Regimen</h4>
             <hr />
             <h5>To get started, click "Start Regimen"</h5>
@@ -65,7 +58,7 @@ class ClientWorkout extends Component {
               <Row>
                 <Col m={8}>
                   <div class="video-container">
-                  <iframe width="853" height="480" src={this.state.workoutVid} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></iframe>
+                  <iframe title="video" width="853" height="480" src={this.state.workoutVid} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></iframe>
                   </div>
                 </Col>
                 <Col className="exercise-list-overflow" m={4}>
@@ -76,7 +69,7 @@ class ClientWorkout extends Component {
               </Row>
               <Row>
                 <Col m={12}>
-                  <h1>{this.state.workoutReps}</h1>
+                  <p className="flow-text">{this.state.workoutReps}</p>
               </Col>
               </Row>              
             </Modal>

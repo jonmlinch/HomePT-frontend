@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import Patient from './accounts/Patient';
