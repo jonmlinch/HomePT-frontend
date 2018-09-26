@@ -67,6 +67,10 @@ body {
   margin-bottom: 50px;
 }
 
+.feedback-container {
+  margin-left: 25px;
+}
+
 .client-profile {
   height: 700px;
   margin-top: 25px;
@@ -75,6 +79,10 @@ body {
 
 .client-profile-margin {
   margin-bottom: 340px;
+}
+
+.client-dashboard-padding {
+  margin-bottom: 320px;
 }
 
 .start-regimen-button {

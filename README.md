@@ -6,14 +6,10 @@ In talking with both physical therapists and patients, it became clear that havi
 
 HomePT is a web-based app allowing physical therapists to "prescribe" workout routines to their patients who can then access their prescibed workout along with accompanying videos showing proper technique. After completing a workout, patients then have the ability to share feedback about how they felt with their physical therapist.
 
-## What it includes
+## Further Documentation
 
-* MongoDB/Mongoose models on the backend
-* Express.js to handle backend routing and authentication
-* JWT authentication on backend along with cookie storage on frontend
-* React routing to handle routing on the frontend
-* Axios to handle fetchs between front and backends
-* React-Materialize styling
+This README covers basic usage of the site. For more information, please
+refer to our [Wiki](https://github.com/AFresnedo/frontend-pt/wiki).
 
 ## Steps to use
 
