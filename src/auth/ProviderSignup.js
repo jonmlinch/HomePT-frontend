@@ -46,7 +46,7 @@ class Signup extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log("I'm sending", this.state);
     axios.post(SERVER_URL + '/auth/signup', this.state)
     .then(result => {
         //Add the newly received token to cookie
